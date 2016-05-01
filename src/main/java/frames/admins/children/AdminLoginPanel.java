@@ -4,15 +4,15 @@ package frames.admins.children;
  * Created by Jonah on 4/30/2016.
  */
 
-import frames.MainFrame;
 import frames.actions.TextAction;
 import frames.interfaces.panels.LoginPanelI;
 import global.Strings;
-import utils.random.TimerUtil;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
+
+import static frames.MainFrame.switchView;
 
 public class AdminLoginPanel extends JPanel implements LoginPanelI
 {
@@ -63,7 +63,7 @@ public class AdminLoginPanel extends JPanel implements LoginPanelI
         {
             if(correctLogin())
             {
-                MainFrame.switchView(Strings.Views("ADMIN"));
+                switchView(Strings.ADMIN_VIEW);
             }
         });
     }
@@ -90,16 +90,20 @@ public class AdminLoginPanel extends JPanel implements LoginPanelI
     public boolean correctLogin()
     {
         char[] pass = {'1', '2', '3', '4'};
+
         boolean goodCredentials = usernameTf.getText().equalsIgnoreCase("Jonah") && Arrays.equals(passwordTf.getPassword(), pass);
         if(!goodCredentials)
         {
             usernameTf.setText("Username");
             passwordTf.setText("password");
+
             return true;
         }
         else
         {
-            TimerUtil.startTimer(2000, new TextAction().switchButtonTextAndColor(loginBtn, Color.RED, "Invalid Credentials", "Login"));
+            Timer switchBtnTAC = new Timer(1500, TextAction.btnWarningAction(loginBtn, Color.RED, "Invalid Login", "Login"));
+            switchBtnTAC.start();
+
             return false;
         }
     }
