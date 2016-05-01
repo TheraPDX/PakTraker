@@ -4,6 +4,7 @@ package frames.admins.parents;
  * Created by Jonah on 4/30/2016.
  */
 
+import frames.admins.children.TopAdminPanel;
 import frames.interfaces.panels.MainPanelI;
 
 import javax.swing.*;
@@ -27,6 +28,6 @@ public class AdminMainPanel extends JPanel implements MainPanelI
     @Override
     public void addComponents()
     {
-        add(new JLabel("Admin Panel"));
+        add(new TopAdminPanel(), BorderLayout.NORTH);
     }
 }

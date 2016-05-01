@@ -4,8 +4,6 @@ package frames.actions;
  * Created by Jonah on 4/30/2016.
  */
 
-import utils.random.TimerUtil;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,9 +16,9 @@ public class TextAction
 
     }
 
-    public AbstractAction switchButtonTextAndColor(JButton button, Color color, String tempMessage, String finalMessage)
+    public static AbstractAction btnWarningAction(JButton button, Color color, String warningMsg, String finalMsg)
     {
-        button.setText(tempMessage);
+        button.setText(warningMsg);
         button.setForeground(color);
 
         return new AbstractAction()
@@ -28,9 +26,8 @@ public class TextAction
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                button.setText(finalMessage);
+                button.setText(finalMsg);
                 button.setForeground(Color.BLACK);
-                TimerUtil.stopTimer();
             }
         };
     }

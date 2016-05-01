@@ -29,7 +29,8 @@ public class MainFrame
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        switchView(Strings.Views("ADMIN LOGIN"));
+        switchView(Strings.LOGIN_VIEW);
+        mainFrame.pack();
         mainFrame.setVisible(true);
     }
 
@@ -42,8 +43,8 @@ public class MainFrame
     {
         mainFrame.add(containerPanel);
 
-        containerPanel.add(adminMainPanel, Strings.Views("ADMIN"));
-        containerPanel.add(adminLoginPanel, Strings.Views("ADMIN LOGIN"));
+        containerPanel.add(adminMainPanel, Strings.ADMIN_VIEW);
+        containerPanel.add(adminLoginPanel, Strings.LOGIN_VIEW);
     }
 
     public static void switchView(String name)
