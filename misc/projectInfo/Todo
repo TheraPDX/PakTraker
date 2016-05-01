@@ -1,63 +1,19 @@
-Features To Implement:
-    - Admin account for owners (plural)
-        #NOTES# {
-            * Both accounts need to do all sales/tracking
-            *
-        }
+* Ideas To Think About:
+    * Login
+        - How To Sign In When First Purchased (Website Integration)
+            - Give Username And Password When First Purchased
+            - ^ Would Have To Be Changed The First Time So Can Be Deleted (Good For 48hr's?)
+            - Java File With Array Of One Time Good Username's and Password's
+            - ^ File Would Be On Github Blacklist
+            - WTF DATABASE WITH 1 TIME PASS & USERS ^^^^^^^ ...Lmao
 
-            * Admins create accounts for employees (plural)
-                * Employees
-                    #NOTES# {
-                        *
-                    }
+* Features To Implement:
+    - Database (Sooner Then Later)
+    - Change User And Pass On First Use
+        - Database Info (0 or 1) For First Use
 
-                    * Create New Customer Accounts
-                        * Customers
-                            #NOTES# {
+* Features Implemented:
 
-                            }
+* Bugs:
 
-                        * Keeps Tracks
-                            * Total weight/sales
-
-                            * Name/Phone/Email/DOB/Sex/Etc.
-
-                            * Gov Info (Secure)
-                                * OMMP Card
-                                * Gov ID
-                                * Weight
-                                    * Concentrate/Extract/Etc.
-                                    * Brand Name
-                                    * Description
-                                * Date
-                                * Amount Of Money Paid
-
-                                * Seeds/Plants
-                                * Per Day
-
-                    * Records Everything
-                        * Total Sales
-                            * Weed
-                            * Glass
-                            * Paraphernalia
-                            * Edibles
-                            * THC/CBD Oil
-                            * Merchandise
-                            * Incense
-                            * Earbuds
-                                * Bomb AF
-                                * Cheap
-                                * Free Promotion/Little side profit
-
-                        * Employee Info
-                            * Application Info
-                                * DOB/Sex/Social/Etc.
-                                * Pay Rate/Total Raises/Years w. company/Etc.
-
-                            * Hire/Fire/Pay Rate/Raises/Gov. Info/
-
-                        * Manipulate Weight
-                            * Profit
-                            * Limit per customer
-
-            * Total Sales/Weight/Profit/
+* Bugs Fixed:

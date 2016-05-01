@@ -1,0 +1,63 @@
+Project Structure:
+    - Admin account for owners (plural)
+        #NOTES# {
+            * Both accounts need to do all sales/tracking
+            *
+        }
+
+            * Admins create accounts for employees (plural)
+                * Employees
+                    #NOTES# {
+                        *
+                    }
+
+                    * Create New Customer Accounts
+                        * Customers
+                            #NOTES# {
+
+                            }
+
+                        * Keeps Tracks
+                            * Total weight/sales
+
+                            * Name/Phone/Email/DOB/Sex/Etc.
+
+                            * Gov Info (Secure)
+                                * OMMP Card
+                                * Gov ID
+                                * Weight
+                                    * Concentrate/Extract/Etc.
+                                    * Brand Name
+                                    * Description
+                                * Date
+                                * Amount Of Money Paid
+
+                                * Seeds/Plants
+                                * Per Day
+
+                    * Records Everything
+                        * Total Sales
+                            * Weed
+                            * Glass
+                            * Paraphernalia
+                            * Edibles
+                            * THC/CBD Oil
+                            * Merchandise
+                            * Incense
+                            * Earbuds
+                                * Bomb AF
+                                * Cheap
+                                * Free Promotion/Little side profit
+
+                        * Employee Info
+                            * Application Info
+                                * DOB/Sex/Social/Etc.
+                                * Pay Rate/Total Raises/Years w. company/Etc.
+
+                            * Hire/Fire/Pay Rate/Raises/Gov. Info/
+
+                        * Manipulate Weight
+                            * Profit
+                            * Limit per customer
+
+            * Total Sales/Weight/Profit/
