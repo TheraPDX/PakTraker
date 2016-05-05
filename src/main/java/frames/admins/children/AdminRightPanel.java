@@ -4,13 +4,13 @@ package frames.admins.children;
  * Created by Jonah on 5/1/2016.
  */
 
-import frames.interfaces.panels.MainPanelI;
+import global.Dimensions;
 import utils.DateUtils;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminRightPanel extends JPanel implements MainPanelI
+public class AdminRightPanel extends JPanel
 {
     private final JLabel typeOfProductLbl = new JLabel("Type Of Product");
     private final JLabel amountSoldLbl = new JLabel("Amount (Grams)");
@@ -31,7 +31,7 @@ public class AdminRightPanel extends JPanel implements MainPanelI
 
     private final DateUtils dateUtils = new DateUtils();
 
-    int x = 0, y = 0;
+    private int x = 0, y = 0;
 
     public AdminRightPanel()
     {
@@ -39,23 +39,27 @@ public class AdminRightPanel extends JPanel implements MainPanelI
         addComponents();
     }
 
-    @Override
-    public void initComponents()
+    private void initComponents()
     {
         //This
         setBackground(Color.RED);
+
+        //Amount Sold Text Field
+        amountSoldTf.setBorder(null);
 
         //Num Of Seeds Label
         numOfSeedsLbl.setVisible(false);
 
         //Num Of Seeds Text Field
         numOfSeedsTf.setVisible(false);
+        numOfSeedsTf.setBorder(null);
 
         //Num Of Imm. Plants Label
         numOfImmPlantsLbl.setVisible(false);
 
         //Num Of Imm. Plant Text Field
         numOfPlantsTf.setVisible(false);
+        numOfPlantsTf.setBorder(null);
 
         //Seeds Or Plants Checkbox
         seedsOrPlantsBoughtCheckBox.setBackground(null);
@@ -91,6 +95,12 @@ public class AdminRightPanel extends JPanel implements MainPanelI
             }
         });
 
+        //Sale Price Text Field
+        salePriceTf.setBorder(null);
+
+        //D.O.B. Text Field
+        dobTf.setBorder(null);
+
         makeSaleBtn.addActionListener(e ->
         {
             int age = dateUtils.calculateAge(dobTf.getText());
@@ -102,8 +112,7 @@ public class AdminRightPanel extends JPanel implements MainPanelI
         });
     }
 
-    @Override
-    public void addComponents()
+    private void addComponents()
     {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -111,7 +120,7 @@ public class AdminRightPanel extends JPanel implements MainPanelI
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.NORTH;
         gbc.insets = new Insets(10, 5, 10, 5);
-        gbc.weightx = 1.0;
+        gbc.weightx = 1;
 
         gbc.gridwidth = 2;
         gbc.gridx = 0;
@@ -170,17 +179,15 @@ public class AdminRightPanel extends JPanel implements MainPanelI
 
         gbc.gridx = x;
         gbc.gridy = y + 7;
-        gbc.weightx = 0.1;
         gbc.weighty = 1;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(makeSaleBtn, gbc);
     }
 
+    //Keep For Aesthetics
     @Override
     public Dimension getPreferredSize()
     {
-        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-
-        return new Dimension(250, screen.height);
+        return new Dimension(250, Dimensions.screen.height);
     }
 }

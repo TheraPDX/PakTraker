@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 
 public class TextAction
 {
-
     public TextAction()
     {
 

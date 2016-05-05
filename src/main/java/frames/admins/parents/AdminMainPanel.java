@@ -7,22 +7,19 @@ package frames.admins.parents;
 import frames.admins.children.AdminCenterPanel;
 import frames.admins.children.AdminRightPanel;
 import frames.admins.children.AdminTopPanel;
-import frames.interfaces.panels.MainPanelI;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminMainPanel extends JPanel implements MainPanelI
+public class AdminMainPanel extends JPanel
 {
-    public final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-
-    public final AdminTopPanel adminTopPanel = new AdminTopPanel();
+    private final AdminTopPanel adminTopPanel = new AdminTopPanel();
 
     public static final CardLayout cardlayout = new CardLayout();
     public static final JPanel containerPanel = new JPanel();
 
-    public final AdminCenterPanel adminCenterPanel = new AdminCenterPanel();
-    public final AdminRightPanel adminRightPanel = new AdminRightPanel();
+    private final AdminCenterPanel adminCenterPanel = new AdminCenterPanel();
+    private final AdminRightPanel adminRightPanel = new AdminRightPanel();
 
     public AdminMainPanel()
     {
@@ -30,14 +27,12 @@ public class AdminMainPanel extends JPanel implements MainPanelI
         addComponents();
     }
 
-    @Override
-    public void initComponents()
+    private void initComponents()
     {
         setBackground(Color.blue);
     }
 
-    @Override
-    public void addComponents()
+    private void addComponents()
     {
         //Container Panel
         containerPanel.setLayout(cardlayout);

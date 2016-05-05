@@ -8,7 +8,6 @@ import javax.swing.*;
 
 public class RunPakTraker
 {
-
     public static void main(String[] args)
     {
         SwingUtilities.invokeLater(MainFrame::new);

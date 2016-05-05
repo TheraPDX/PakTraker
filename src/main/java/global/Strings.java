@@ -26,6 +26,7 @@ public class Strings
     public static final String EMPLOYEE_VIEW = "Employee";
     public static final String CUSTOMER_PROFILE_VIEW = "Customer";
     public static final String SETTINGS_VIEW = "Settings";
+    public static final String MY_STATS_VIEW = "Stats";
 
     //Time and Date
     static DateFormat date = new SimpleDateFormat("M/dd/yy");

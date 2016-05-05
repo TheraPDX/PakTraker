@@ -6,11 +6,7 @@ package utils.datebase;
 
 public class SearchUtils
 {
-
-    public SearchUtils()
-    {
-
-    }
+    public SearchUtils() { }
 
     public boolean adminDbContains(String key, String string)
     {

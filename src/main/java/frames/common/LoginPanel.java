@@ -21,12 +21,11 @@ public class LoginPanel extends JPanel
     private final JTextField usernameTf = new JTextField("Username");
     private final JPasswordField passwordTf = new JPasswordField("Password");
 
-    String[] acctTypes = {"Admin", "Employee", "Customer"};
+    private final String[] acctTypes = {"Admin", "Employee", "Customer"};
     private final JComboBox<String> acctTypeCb = new JComboBox<>(acctTypes);
     private final JButton loginBtn = new JButton("Login");
 
-    private final Dimension tfDimension = new Dimension(125, 30);
-    private final Dimension lblDimension = new Dimension(125, 20);
+    private final Dimension loginComponentsDimension = new Dimension(125, 30);
 
     private final LoginUtils loginUtils = new LoginUtils();
 
@@ -40,27 +39,27 @@ public class LoginPanel extends JPanel
     {
         //Username Label
         usernameLbl.setAlignmentX(CENTER_ALIGNMENT);
-        usernameLbl.setMaximumSize(lblDimension);
+        usernameLbl.setMaximumSize(loginComponentsDimension);
 
         //Username Text Field
         usernameTf.setAlignmentX(CENTER_ALIGNMENT);
-        usernameTf.setMaximumSize(tfDimension);
+        usernameTf.setMaximumSize(loginComponentsDimension);
 
         //Password Label
         passwordLbl.setAlignmentX(CENTER_ALIGNMENT);
-        passwordLbl.setMaximumSize(lblDimension);
+        passwordLbl.setMaximumSize(loginComponentsDimension);
 
         //Password Text Field
         passwordTf.setAlignmentX(CENTER_ALIGNMENT);
-        passwordTf.setMaximumSize(tfDimension);
+        passwordTf.setMaximumSize(loginComponentsDimension);
 
         //Account Type Label
         acctTypeLbl.setAlignmentX(CENTER_ALIGNMENT);
-        acctTypeLbl.setMaximumSize(lblDimension);
+        acctTypeLbl.setMaximumSize(loginComponentsDimension);
 
         //User Type Combobox
         acctTypeCb.setAlignmentX(CENTER_ALIGNMENT);
-        acctTypeCb.setMaximumSize(tfDimension);
+        acctTypeCb.setMaximumSize(loginComponentsDimension);
 
         //Login Button
         loginBtn.setAlignmentX(CENTER_ALIGNMENT);

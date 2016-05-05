@@ -4,6 +4,7 @@ package frames.admins.children;
  * Created by Jonah on 4/30/2016.
  */
 
+import global.Dimensions;
 import global.Strings;
 
 import javax.swing.*;
@@ -18,15 +19,13 @@ import static frames.MainFrame.switchView;
 
 public class AdminTopPanel extends JPanel
 {
-    private final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-
     private JLabel timeAndDate = new JLabel("<html><div style='text-align: center;'>"
             + Strings.TIME + "<br>" + Strings.DATE + "</div></html>");
 
     private final JLabel logo = new JLabel("Admin Panel");
 
-    private final DefaultComboBoxModel<String> uddModel = new DefaultComboBoxModel<>();
-    private final JComboBox<String> userDropdown = new JComboBox<>(uddModel);
+    private final String[] uddComponents = {Strings.CUR_USER, "My Stats", "Settings", "Logout"};
+    private final JComboBox<String> userDropdown = new JComboBox<>(uddComponents);
 
     public AdminTopPanel()
     {
@@ -71,7 +70,32 @@ public class AdminTopPanel extends JPanel
         {
             if (event.getStateChange() == ItemEvent.SELECTED)
             {
-                Object item = event.getItem();
+                String item = event.getItem().toString();
+
+                switch(item)
+                {
+                    case Strings.CUR_USER:
+                        break;
+
+                    case "Logout":
+                        resetUddCb();
+                        switchView(Strings.LOGIN_VIEW);
+                        break;
+
+                    case "Settings":
+                        resetUddCb();
+                        switchView(Strings.SETTINGS_VIEW);
+                        break;
+
+                    case "My Stats":
+                        resetUddCb();
+                        switchView(Strings.MY_STATS_VIEW);
+                        break;
+
+                    default:
+                        resetUddCb();
+                        break;
+                }
 
                 if(item.equals("Logout"))
                 {
@@ -79,12 +103,6 @@ public class AdminTopPanel extends JPanel
                 }
             }
         });
-
-        //User Dropdown Model
-        uddModel.addElement(Strings.CUR_USER);
-        uddModel.addElement("My Stats");
-        uddModel.addElement("Settings");
-        uddModel.addElement("Logout");
     }
 
     private void addComponents()
@@ -103,6 +121,11 @@ public class AdminTopPanel extends JPanel
     @Override
     public Dimension getPreferredSize()
     {
-        return new Dimension(screen.width, screen.height/11);
+        return new Dimension(Dimensions.screen.width, Dimensions.screen.height/11);
+    }
+
+    private void resetUddCb()
+    {
+        userDropdown.setSelectedIndex(0);
     }
 }

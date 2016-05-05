@@ -19,19 +19,20 @@ public class MainFrame
 
     private final AdminMainPanel adminMainPanel = new AdminMainPanel();
 
-    public static CardLayout cardLayout = new CardLayout();
+    public static final CardLayout cardLayout = new CardLayout();
     public static final JPanel containerPanel = new JPanel(cardLayout);
 
     public MainFrame()
     {
-
         initComponents();
         addComponents();
 
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
         switchView(Strings.LOGIN_VIEW);
+
         mainFrame.pack();
         mainFrame.setVisible(true);
     }
