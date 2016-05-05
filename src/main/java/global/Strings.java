@@ -29,7 +29,7 @@ public class Strings
 
     //Time and Date
     static DateFormat date = new SimpleDateFormat("M/dd/yy");
-    static DateFormat time = new SimpleDateFormat("hh:mm");
+    static DateFormat time = new SimpleDateFormat("h:mm");
     static Calendar calendar = Calendar.getInstance();
 
     public static String TIME = time.format(calendar.getTime());

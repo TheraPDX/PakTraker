@@ -9,23 +9,26 @@ import global.Strings;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class TopAdminPanel extends JPanel
+import static frames.MainFrame.switchView;
+
+public class AdminTopPanel extends JPanel
 {
     private final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
     private JLabel timeAndDate = new JLabel("<html><div style='text-align: center;'>"
-            + Strings.TIME + "<br>" + Strings.DATE + "</div></html>", SwingConstants.CENTER);
+            + Strings.TIME + "<br>" + Strings.DATE + "</div></html>");
 
     private final JLabel logo = new JLabel("Admin Panel");
 
     private final DefaultComboBoxModel<String> uddModel = new DefaultComboBoxModel<>();
     private final JComboBox<String> userDropdown = new JComboBox<>(uddModel);
 
-    public TopAdminPanel()
+    public AdminTopPanel()
     {
         initComponents();
         addComponents();
@@ -39,13 +42,13 @@ public class TopAdminPanel extends JPanel
         //Time And Date
         timeAndDate.setMaximumSize(new Dimension(40, 35));
 
-        Timer timeTimer = new Timer(30000, new AbstractAction()
+        Timer timeUpdater = new Timer(30000, new AbstractAction()
         {
             @Override
             public void actionPerformed(ActionEvent e)
             {
                 DateFormat date = new SimpleDateFormat("M/dd/yy");
-                DateFormat time = new SimpleDateFormat("hh:mm");
+                DateFormat time = new SimpleDateFormat("h:mm");
                 Calendar calendar = Calendar.getInstance();
 
                 String curTimeAndDate = "<html><div style='text-align: center;'>" + time.format(calendar.getTime())
@@ -55,14 +58,27 @@ public class TopAdminPanel extends JPanel
             }
         });
 
-        timeTimer.start();
-        timeTimer.setRepeats(true);
+        timeUpdater.start();
+        timeUpdater.setRepeats(true);
 
         //Logo Label
         logo.setFont(new Font("Courier New", Font.ITALIC, 24));
 
         //User Dropdown
         userDropdown.setMaximumSize(new Dimension(100, 35));
+
+        userDropdown.addItemListener(event ->
+        {
+            if (event.getStateChange() == ItemEvent.SELECTED)
+            {
+                Object item = event.getItem();
+
+                if(item.equals("Logout"))
+                {
+                    switchView(Strings.LOGIN_VIEW);
+                }
+            }
+        });
 
         //User Dropdown Model
         uddModel.addElement(Strings.CUR_USER);

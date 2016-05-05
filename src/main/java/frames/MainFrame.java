@@ -4,7 +4,7 @@ package frames;
  * Created by Jonah on 4/29/2016.
  */
 
-import frames.admins.children.AdminLoginPanel;
+import frames.admins.parents.AdminLoginPanel;
 import frames.admins.parents.AdminMainPanel;
 import global.Strings;
 
@@ -14,11 +14,13 @@ import java.awt.*;
 public class MainFrame
 {
     public static final JFrame mainFrame = new JFrame("Pak Traker");
-    public static CardLayout cardLayout = new CardLayout(0, 0);
-    public static final JPanel containerPanel = new JPanel(cardLayout);
+
+    private final AdminLoginPanel adminLoginPanel = new AdminLoginPanel();
 
     private final AdminMainPanel adminMainPanel = new AdminMainPanel();
-    private final AdminLoginPanel adminLoginPanel = new AdminLoginPanel();
+
+    public static CardLayout cardLayout = new CardLayout();
+    public static final JPanel containerPanel = new JPanel(cardLayout);
 
     public MainFrame()
     {
