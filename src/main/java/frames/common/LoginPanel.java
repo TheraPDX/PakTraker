@@ -4,28 +4,31 @@ package frames.common;
  * Created by Jonah on 4/30/2016.
  */
 
-import frames.actions.TextAction;
-import frames.interfaces.panels.LoginPanelI;
 import global.Strings;
+import utils.datebase.LoginUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
 
 import static frames.MainFrame.switchView;
 
-public class LoginPanel extends JPanel implements LoginPanelI
+public class LoginPanel extends JPanel
 {
-    private final JLabel usernameLbl = new JLabel("Username");
-    private final JLabel passwordLbl = new JLabel("Password");
+    private final JLabel usernameLbl = new JLabel("Username", SwingConstants.CENTER);
+    private final JLabel passwordLbl = new JLabel("Password", SwingConstants.CENTER);
+    private final JLabel acctTypeLbl = new JLabel("Account Type", SwingConstants.CENTER);
 
     private final JTextField usernameTf = new JTextField("Username");
     private final JPasswordField passwordTf = new JPasswordField("Password");
 
+    String[] acctTypes = {"Admin", "Employee", "Customer"};
+    private final JComboBox<String> acctTypeCb = new JComboBox<>(acctTypes);
     private final JButton loginBtn = new JButton("Login");
 
     private final Dimension tfDimension = new Dimension(125, 30);
-    private final Dimension lblDimension = new Dimension(65, 20);
+    private final Dimension lblDimension = new Dimension(125, 20);
+
+    private final LoginUtils loginUtils = new LoginUtils();
 
     public LoginPanel()
     {
@@ -33,43 +36,61 @@ public class LoginPanel extends JPanel implements LoginPanelI
         addComponents();
     }
 
-    @Override
-    public void initComponents()
+    private void initComponents()
     {
         //Username Label
         usernameLbl.setAlignmentX(CENTER_ALIGNMENT);
-        usernameLbl.setAlignmentY(CENTER_ALIGNMENT);
         usernameLbl.setMaximumSize(lblDimension);
 
         //Username Text Field
         usernameTf.setAlignmentX(CENTER_ALIGNMENT);
-        usernameTf.setAlignmentY(CENTER_ALIGNMENT);
         usernameTf.setMaximumSize(tfDimension);
 
         //Password Label
         passwordLbl.setAlignmentX(CENTER_ALIGNMENT);
-        passwordLbl.setAlignmentY(CENTER_ALIGNMENT);
         passwordLbl.setMaximumSize(lblDimension);
 
         //Password Text Field
         passwordTf.setAlignmentX(CENTER_ALIGNMENT);
-        passwordTf.setAlignmentY(CENTER_ALIGNMENT);
         passwordTf.setMaximumSize(tfDimension);
+
+        //Account Type Label
+        acctTypeLbl.setAlignmentX(CENTER_ALIGNMENT);
+        acctTypeLbl.setMaximumSize(lblDimension);
+
+        //User Type Combobox
+        acctTypeCb.setAlignmentX(CENTER_ALIGNMENT);
+        acctTypeCb.setMaximumSize(tfDimension);
 
         //Login Button
         loginBtn.setAlignmentX(CENTER_ALIGNMENT);
-        loginBtn.setAlignmentY(CENTER_ALIGNMENT);
         loginBtn.addActionListener(e ->
         {
-            if(correctLogin())
+            switch(acctTypeCb.getSelectedItem().toString())
             {
-                switchView(Strings.ADMIN_VIEW);
+                case "Admin":
+                    if(loginUtils.correctAdminLogin("Jonah", new char[] {'1'}))
+                        switchView(Strings.ADMIN_VIEW);
+                    break;
+
+                case "Employee":
+                    if(loginUtils.correctEmployeeLogin("Jonah", new char[] {'2'}))
+                        switchView(Strings.EMPLOYEE_VIEW);
+                    break;
+
+                case "Customer":
+                    if(loginUtils.correctCustomerLogin("Jonah", new char[] {'3'}))
+                        switchView(Strings.CUSTOMER_PROFILE_VIEW);
+                    break;
+
+                default:
+                    loginUtils.incorrectLogin(loginBtn);
+                    break;
             }
         });
     }
 
-    @Override
-    public void addComponents()
+    private void addComponents()
     {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -82,29 +103,11 @@ public class LoginPanel extends JPanel implements LoginPanelI
         add(Box.createVerticalStrut(5));
         add(passwordTf);
         add(Box.createVerticalStrut(10));
+        add(acctTypeLbl);
+        add(Box.createVerticalStrut(5));
+        add(acctTypeCb);
+        add(Box.createVerticalStrut(20));
         add(loginBtn);
         add(Box.createVerticalGlue());
-    }
-
-    @Override
-    public boolean correctLogin()
-    {
-        char[] pass = {'1', '2', '3', '4'};
-
-        boolean goodCredentials = usernameTf.getText().equalsIgnoreCase("Jonah") && Arrays.equals(passwordTf.getPassword(), pass);
-        if(!goodCredentials)
-        {
-            usernameTf.setText("Username");
-            passwordTf.setText("password");
-
-            return true;
-        }
-        else
-        {
-            Timer switchBtnTAC = new Timer(1500, TextAction.btnWarningAction(loginBtn, Color.RED, "Invalid Login", "Login"));
-            switchBtnTAC.start();
-
-            return false;
-        }
     }
 }
