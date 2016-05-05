@@ -77,10 +77,11 @@ public class LoginPanel extends JPanel
                         switchView(Strings.EMPLOYEE_VIEW);
                     break;
 
+                /*Commented out to test default case (Incorrect)
                 case "Customer":
                     if(loginUtils.correctCustomerLogin("Jonah", new char[] {'3'}))
                         switchView(Strings.CUSTOMER_PROFILE_VIEW);
-                    break;
+                    break;*/
 
                 default:
                     loginUtils.incorrectLogin(loginBtn);
