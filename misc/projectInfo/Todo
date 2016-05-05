@@ -15,6 +15,8 @@
         - Database Info (0 or 1) For First Use Or Not
 
     - Combobox on login screen for admin, employee, etc.
+    - Check D.O.B. To Make Sure 18(Med.) 21(Rec.)
+        - Checkboxes, Med., Rec.
 
 * Features Implemented:
 

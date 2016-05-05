@@ -4,7 +4,7 @@ package frames;
  * Created by Jonah on 4/29/2016.
  */
 
-import frames.admins.parents.AdminLoginPanel;
+import frames.common.LoginPanel;
 import frames.admins.parents.AdminMainPanel;
 import global.Strings;
 
@@ -15,7 +15,7 @@ public class MainFrame
 {
     public static final JFrame mainFrame = new JFrame("Pak Traker");
 
-    private final AdminLoginPanel adminLoginPanel = new AdminLoginPanel();
+    private final LoginPanel adminLoginPanel = new LoginPanel();
 
     private final AdminMainPanel adminMainPanel = new AdminMainPanel();
 

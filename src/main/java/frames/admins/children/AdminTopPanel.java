@@ -103,6 +103,6 @@ public class AdminTopPanel extends JPanel
     @Override
     public Dimension getPreferredSize()
     {
-        return new Dimension(screen.width, screen.height/10);
+        return new Dimension(screen.width, screen.height/11);
     }
 }

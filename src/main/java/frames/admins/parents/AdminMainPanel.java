@@ -14,6 +14,8 @@ import java.awt.*;
 
 public class AdminMainPanel extends JPanel implements MainPanelI
 {
+    public final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+
     public final AdminTopPanel adminTopPanel = new AdminTopPanel();
 
     public static final CardLayout cardlayout = new CardLayout();
@@ -41,9 +43,10 @@ public class AdminMainPanel extends JPanel implements MainPanelI
         containerPanel.setLayout(cardlayout);
         containerPanel.add(adminCenterPanel, "Main View");
 
-        add(adminTopPanel, BorderLayout.NORTH);
+        setLayout(new BorderLayout(0, 0));
+        add(adminTopPanel, BorderLayout.PAGE_START);
         add(containerPanel, BorderLayout.CENTER);
-        add(adminRightPanel, BorderLayout.EAST);
+        add(adminRightPanel, BorderLayout.LINE_END);
 
         cardlayout.show(containerPanel, "Main View");
     }

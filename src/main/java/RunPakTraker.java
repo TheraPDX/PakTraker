@@ -1,8 +1,8 @@
-package frames;
-
 /*
  * Created by Jonah on 4/30/2016.
  */
+
+import frames.MainFrame;
 
 import javax.swing.*;
 

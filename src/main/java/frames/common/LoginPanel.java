@@ -1,4 +1,4 @@
-package frames.admins.parents;
+package frames.common;
 
 /*
  * Created by Jonah on 4/30/2016.
@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 import static frames.MainFrame.switchView;
 
-public class AdminLoginPanel extends JPanel implements LoginPanelI
+public class LoginPanel extends JPanel implements LoginPanelI
 {
     private final JLabel usernameLbl = new JLabel("Username");
     private final JLabel passwordLbl = new JLabel("Password");
@@ -27,7 +27,7 @@ public class AdminLoginPanel extends JPanel implements LoginPanelI
     private final Dimension tfDimension = new Dimension(125, 30);
     private final Dimension lblDimension = new Dimension(65, 20);
 
-    public AdminLoginPanel()
+    public LoginPanel()
     {
         initComponents();
         addComponents();

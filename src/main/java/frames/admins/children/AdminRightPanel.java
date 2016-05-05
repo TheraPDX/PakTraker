@@ -18,13 +18,12 @@ public class AdminRightPanel extends JPanel implements MainPanelI
     private final JLabel numOfImmPlantsLbl = new JLabel("Immature Plants");
     private final JLabel salePriceLbl = new JLabel("Price");
     private final JLabel dobLbl = new JLabel("D.O.B.   (M-D-YYYY)");
-    private final JLabel ageLbl = new JLabel("Age");
 
     private final JComboBox<String> typesOfProducts= new JComboBox<>();
     private final JTextField amountSoldTf = new JTextField("Amount");
     private final JCheckBox seedsOrPlantsBoughtCheckBox = new JCheckBox("Purchased Seeds Or Plants?");
-    private final JTextField numOfSeedsTf = new JTextField("Num Of Seeds");
-    private final JTextField numOfImmPlantsTf = new JTextField("Num Of Imm, Plants");
+    private final JTextField numOfSeedsTf = new JTextField("Seeds");
+    private final JTextField numOfPlantsTf = new JTextField("Plants");
     private final JTextField salePriceTf = new JTextField("Price");
     private final JTextField dobTf = new JTextField("D.O.B.");
 
@@ -56,7 +55,7 @@ public class AdminRightPanel extends JPanel implements MainPanelI
         numOfImmPlantsLbl.setVisible(false);
 
         //Num Of Imm. Plant Text Field
-        numOfImmPlantsTf.setVisible(false);
+        numOfPlantsTf.setVisible(false);
 
         //Seeds Or Plants Checkbox
         seedsOrPlantsBoughtCheckBox.setBackground(null);
@@ -69,7 +68,7 @@ public class AdminRightPanel extends JPanel implements MainPanelI
                 numOfSeedsTf.setVisible(true);
 
                 numOfImmPlantsLbl.setVisible(true);
-                numOfImmPlantsTf.setVisible(true);
+                numOfPlantsTf.setVisible(true);
                 x = 1;
                 y = 1;
 
@@ -82,7 +81,7 @@ public class AdminRightPanel extends JPanel implements MainPanelI
                 numOfSeedsTf.setVisible(false);
 
                 numOfImmPlantsLbl.setVisible(false);
-                numOfImmPlantsTf.setVisible(false);
+                numOfPlantsTf.setVisible(false);
 
                 x = 0;
                 y = 0;
@@ -131,11 +130,12 @@ public class AdminRightPanel extends JPanel implements MainPanelI
         gbc.gridy = 1;
         add(amountSoldTf, gbc);
 
-        gbc.gridwidth = 1;
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.gridx = 0;
         gbc.gridy = 2;
         add(seedsOrPlantsBoughtCheckBox, gbc);
 
+        gbc.gridwidth = 1;
         gbc.gridx = x;
         gbc.gridy = y + 3;
         add(numOfSeedsLbl, gbc);
@@ -150,7 +150,7 @@ public class AdminRightPanel extends JPanel implements MainPanelI
 
         gbc.gridx = x + 1;
         gbc.gridy = y + 4;
-        add(numOfImmPlantsTf, gbc);
+        add(numOfPlantsTf, gbc);
 
         gbc.gridx = x;
         gbc.gridy = y + 5;
@@ -181,6 +181,6 @@ public class AdminRightPanel extends JPanel implements MainPanelI
     {
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 
-        return new Dimension(300, screen.height);
+        return new Dimension(250, screen.height);
     }
 }
