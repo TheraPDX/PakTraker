@@ -25,6 +25,8 @@ public class SalePanel extends JPanel
     private final JTextField numOfSeedsTf = new JTextField("Seeds");
     private final JTextField numOfPlantsTf = new JTextField("Plants");
     private final JTextField salePriceTf = new JTextField("Price");
+    private final JCheckBox medicalCheckBox = new JCheckBox("Medical");
+    private final JCheckBox recreationalCheckBox = new JCheckBox("Recreational");
     private final JTextField dobTf = new JTextField("D.O.B.");
 
     private final JButton makeSaleBtn = new JButton("Make Sale");
@@ -106,6 +108,16 @@ public class SalePanel extends JPanel
         //Sale Price Text Field
         salePriceTf.setBorder(null);
 
+        //Medical Check Box
+        medicalCheckBox.setBackground(null);
+
+        medicalCheckBox.addActionListener(e1 -> recreationalCheckBox.setSelected(false));
+
+        //Recreational Check Box
+        recreationalCheckBox.setBackground(null);
+
+        recreationalCheckBox.addActionListener(e1 -> medicalCheckBox.setSelected(false));
+
         //D.O.B. Text Field
         dobTf.setBorder(null);
 
@@ -113,19 +125,17 @@ public class SalePanel extends JPanel
         {
             int age = dateUtils.calculateAge(dobTf.getText());
 
-            if(age >= 18 && age < 21)
+            if(medicalCheckBox.isSelected() && age >= 18)
             {
-                //Todo - Add Actual Logic
-
-                System.out.println("Customer Better Have A Med Card!");
+                System.out.println("Medical User");
             }
-            else if(age >= 21)
+            else if(recreationalCheckBox.isSelected() && age >= 21)
             {
-                System.out.println("Legal Age For Med & Recreational, Sell Away!");
+                System.out.println("Recreational User");
             }
             else
             {
-                System.out.println("Don't Make Sale!");
+                System.out.println("Don't Sell To Minors!");
             }
         });
 
@@ -149,7 +159,7 @@ public class SalePanel extends JPanel
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.NORTH;
-        gbc.insets = new Insets(10, 5, 10, 5);
+        gbc.insets = new Insets(10, 10, 10, 10);
         gbc.weightx = 1.0;
 
         gbc.gridwidth = 2;
@@ -201,24 +211,32 @@ public class SalePanel extends JPanel
 
         gbc.gridx = x;
         gbc.gridy = y + 6;
-        add(dobLbl, gbc);
+        add(medicalCheckBox, gbc);
 
         gbc.gridx = x + 1;
-        gbc.gridy = y + 6;
-        add(dobTf, gbc);
+        gbc.gridy = 6;
+        add(recreationalCheckBox, gbc);
 
         gbc.gridx = x;
         gbc.gridy = y + 7;
+        add(dobLbl, gbc);
+
+        gbc.gridx = x + 1;
+        gbc.gridy = y + 7;
+        add(dobTf, gbc);
+
+        gbc.gridx = x;
+        gbc.gridy = y + 8;
         gbc.gridwidth = 1;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(makeSaleBtn, gbc);
 
         gbc.gridx = x;
-        gbc.gridy = y + 8;
+        gbc.gridy = y + 9;
         add(resetSaleInfoBtn, gbc);
 
         gbc.gridx = x;
-        gbc.gridy = y + 9;
+        gbc.gridy = y + 10;
         gbc.weighty = 1.0;
         add(hideSalePanelBtn, gbc);
     }

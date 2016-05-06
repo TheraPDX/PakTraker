@@ -7,18 +7,16 @@
             - ^ File Would Be On Github Blacklist
             - WTF DATABASE WITH BUNCH OF 1 TIME PASS & USERS ^^^^^^^
 
-    * One Screen For Logging Sales
-
 * Features To Implement:
     - Database (Sooner Then Later)
     - Change User And Pass On First Use
         - Database Info (0 or 1) For First Use Or Not
 
-    - Combobox on login screen for admin, employee, etc.
-    - Check D.O.B. To Make Sure 18(Med.) 21(Rec.)
-        - Checkboxes, Med., Rec.
-
 * Features Implemented:
+    - Combobox on login screen for admin, employee, etc.
+    - Sales Panel
+    - Check D.O.B. To Make Sure 18(Med.) 21(Rec.)
+            - Checkboxes, Med., Rec.
 
 * General Todo:
     - Learn MySQL
