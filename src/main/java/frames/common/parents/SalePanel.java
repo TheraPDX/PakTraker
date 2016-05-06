@@ -9,6 +9,7 @@ import utils.DateUtils;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class SalePanel extends JPanel
 {
@@ -107,22 +108,23 @@ public class SalePanel extends JPanel
         {
             int age = dateUtils.calculateAge(dobTf.getText());
 
-            if(age >= 18)
+            if(age >= 18 && age < 21)
             {
-                //Todo
+                //Todo - Add Actual Logic
+
+                System.out.println("Customer Better Have A Med Card!");
+            }
+            else if(age >= 21)
+            {
+                System.out.println("Legal Age For Recreational, Sell Away!");
             }
             else
             {
-                System.out.println("Don't Make Sale!!");
+                System.out.println("Don't Make Sale!");
             }
         });
 
         resetSaleInfoBtn.addActionListener(e ->
-        {
-
-        });
-
-        hideSalePanelBtn.addActionListener(e ->
         {
 
         });
