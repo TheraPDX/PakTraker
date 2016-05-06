@@ -35,7 +35,7 @@ public class EmployeeMainPanel extends JPanel
         //This
 
         //Show Sale Panel
-        AbstractAction showSaleAction = new AbstractAction()
+        AbstractAction employeeShowSaleAction = new AbstractAction()
         {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -48,10 +48,10 @@ public class EmployeeMainPanel extends JPanel
             }
         };
 
-        showSalePanel.addButtonAction(showSaleAction);
+        showSalePanel.addButtonAction(employeeShowSaleAction);
 
         //Hide Sale Panel
-        AbstractAction hidSaleAction = new AbstractAction()
+        AbstractAction employeeHideSaleAction = new AbstractAction()
         {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -64,7 +64,7 @@ public class EmployeeMainPanel extends JPanel
             }
         };
 
-        salePanel.addHideSaleBtnAction(hidSaleAction);
+        salePanel.addHideSaleBtnAction(employeeHideSaleAction);
     }
 
     private void addComponents()

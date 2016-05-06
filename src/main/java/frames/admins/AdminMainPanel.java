@@ -36,7 +36,7 @@ public class AdminMainPanel extends JPanel
         setBackground(Color.blue);
 
         //Show Sale Panel
-        AbstractAction showSaleAction = new AbstractAction()
+        AbstractAction adminShowSaleAction = new AbstractAction()
         {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -49,10 +49,10 @@ public class AdminMainPanel extends JPanel
             }
         };
 
-        showSalePanel.addButtonAction(showSaleAction);
+        showSalePanel.addButtonAction(adminShowSaleAction);
 
         //Hide Sale Panel
-        AbstractAction hidSaleAction = new AbstractAction()
+        AbstractAction adminHideSaleAction = new AbstractAction()
         {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -65,7 +65,7 @@ public class AdminMainPanel extends JPanel
             }
         };
 
-        salePanel.addHideSaleBtnAction(hidSaleAction);
+        salePanel.addHideSaleBtnAction(adminHideSaleAction);
     }
 
     private void addComponents()
