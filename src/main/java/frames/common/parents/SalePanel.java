@@ -1,4 +1,4 @@
-package frames.admins.children;
+package frames.common.parents;
 
 /*
  * Created by Jonah on 5/1/2016.
@@ -10,7 +10,7 @@ import utils.DateUtils;
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminRightPanel extends JPanel
+public class SalePanel extends JPanel
 {
     private final JLabel typeOfProductLbl = new JLabel("Type Of Product");
     private final JLabel amountSoldLbl = new JLabel("Amount (Grams)");
@@ -28,12 +28,14 @@ public class AdminRightPanel extends JPanel
     private final JTextField dobTf = new JTextField("D.O.B.");
 
     private final JButton makeSaleBtn = new JButton("Make Sale");
+    private final JButton resetSaleInfoBtn = new JButton("Reset Sale Info");
+    private final JButton hideSalePanelBtn = new JButton("Hide Sale Bar");
 
     private final DateUtils dateUtils = new DateUtils();
 
     private int x = 0, y = 0;
 
-    public AdminRightPanel()
+    public SalePanel()
     {
         initComponents();
         addComponents();
@@ -105,10 +107,24 @@ public class AdminRightPanel extends JPanel
         {
             int age = dateUtils.calculateAge(dobTf.getText());
 
-            if(!(age >= 18))
+            if(age >= 18)
+            {
+                //Todo
+            }
+            else
             {
                 System.out.println("Don't Make Sale!!");
             }
+        });
+
+        resetSaleInfoBtn.addActionListener(e ->
+        {
+
+        });
+
+        hideSalePanelBtn.addActionListener(e ->
+        {
+
         });
     }
 
@@ -120,7 +136,7 @@ public class AdminRightPanel extends JPanel
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.NORTH;
         gbc.insets = new Insets(10, 5, 10, 5);
-        gbc.weightx = 1;
+        gbc.weightx = 1.0;
 
         gbc.gridwidth = 2;
         gbc.gridx = 0;
@@ -179,15 +195,29 @@ public class AdminRightPanel extends JPanel
 
         gbc.gridx = x;
         gbc.gridy = y + 7;
-        gbc.weighty = 1;
+        gbc.gridwidth = 1;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         add(makeSaleBtn, gbc);
+
+        gbc.gridx = x;
+        gbc.gridy = y + 8;
+        add(resetSaleInfoBtn, gbc);
+
+        gbc.gridx = x;
+        gbc.gridy = y + 9;
+        gbc.weighty = 1.0;
+        add(hideSalePanelBtn, gbc);
     }
 
-    //Keep For Aesthetics
+    //Keep For Layout Sizing Purposes
     @Override
     public Dimension getPreferredSize()
     {
         return new Dimension(250, Dimensions.screen.height);
+    }
+
+    public void addHideSaleBtnAction(AbstractAction action)
+    {
+        hideSalePanelBtn.addActionListener(action);
     }
 }
