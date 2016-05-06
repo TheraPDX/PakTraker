@@ -24,6 +24,7 @@ public class AdminCenterPanel extends JPanel
 
     private void addComponents()
     {
+        //This
         add(new JLabel("Hello"));
     }
 }

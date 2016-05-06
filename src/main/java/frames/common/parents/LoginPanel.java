@@ -92,6 +92,7 @@ public class LoginPanel extends JPanel
 
     private void addComponents()
     {
+        //This
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         add(Box.createVerticalGlue());

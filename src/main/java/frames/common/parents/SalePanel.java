@@ -143,6 +143,7 @@ public class SalePanel extends JPanel
 
     private void addComponents()
     {
+        //This
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 

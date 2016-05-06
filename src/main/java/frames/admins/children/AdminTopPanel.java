@@ -107,6 +107,7 @@ public class AdminTopPanel extends JPanel
 
     private void addComponents()
     {
+        //This
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 
         add(Box.createRigidArea(new Dimension(15, 15)));

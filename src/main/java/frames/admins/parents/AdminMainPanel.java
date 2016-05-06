@@ -33,6 +33,7 @@ public class AdminMainPanel extends JPanel
 
     private void initComponents()
     {
+        //This
         setBackground(Color.blue);
 
         //Sale Container Panel
@@ -77,14 +78,17 @@ public class AdminMainPanel extends JPanel
         containerPanel.setLayout(centerCardLayout);
         containerPanel.add(adminCenterPanel, "Main View");
 
+        //Sale Container Panel
         saleContainerPanel.setLayout(new BorderLayout(0, 0));
         saleContainerPanel.add(showSalePanel, BorderLayout.CENTER);
 
+        //This
         setLayout(new BorderLayout(0, 0));
         add(adminTopPanel, BorderLayout.PAGE_START);
         add(containerPanel, BorderLayout.CENTER);
         add(saleContainerPanel, BorderLayout.LINE_END);
 
+        //Select Visible View
         centerCardLayout.show(containerPanel, "Main View");
     }
 }

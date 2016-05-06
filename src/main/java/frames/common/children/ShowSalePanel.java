@@ -19,11 +19,13 @@ public class ShowSalePanel extends JPanel
 
     private void initComponents()
     {
+        //This
         setOpaque(false);
     }
 
     private void addComponents()
     {
+        //This
         setLayout(new GridLayout(12, 1, 0, 0));
         add(showSalePanelBtn);
     }

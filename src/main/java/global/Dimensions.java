@@ -8,5 +8,6 @@ import java.awt.*;
 
 public class Dimensions
 {
+    //Screen Size
     public static Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 }

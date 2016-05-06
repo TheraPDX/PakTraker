@@ -27,6 +27,7 @@ public class MainFrame
         initComponents();
         addComponents();
 
+        //Main Frame
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -44,8 +45,10 @@ public class MainFrame
 
     private void addComponents()
     {
+        //Main Frame
         mainFrame.add(containerPanel);
 
+        //Container Panel
         containerPanel.add(adminMainPanel, Strings.ADMIN_VIEW);
         containerPanel.add(adminLoginPanel, Strings.LOGIN_VIEW);
     }
