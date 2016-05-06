@@ -11,16 +11,16 @@ public class ShowSalePanel extends JPanel
 {
     private final JButton showSalePanelBtn = new JButton("Sale");
 
-    public ShowSalePanel()
+    public ShowSalePanel(Color color)
     {
-        initComponents();
+        initComponents(color);
         addComponents();
     }
 
-    private void initComponents()
+    private void initComponents(Color color)
     {
         //This
-        setBackground(Color.CYAN);
+        setBackground(color);
     }
 
     private void addComponents()

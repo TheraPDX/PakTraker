@@ -21,7 +21,7 @@ public class AdminMainPanel extends JPanel
     public static final JPanel containerPanel = new JPanel();
 
     private final AdminCenterPanel adminCenterPanel = new AdminCenterPanel();
-    private final ShowSalePanel showSalePanel = new ShowSalePanel();
+    private final ShowSalePanel showSalePanel = new ShowSalePanel(Color.CYAN);
     private final SalePanel salePanel = new SalePanel();
 
     public AdminMainPanel()
