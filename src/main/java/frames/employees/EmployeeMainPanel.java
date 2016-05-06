@@ -7,6 +7,7 @@ package frames.employees;
 import frames.common.ShowSalePanel;
 import frames.common.SalePanel;
 import frames.common.TopPanel;
+import frames.employees.children.EmployeeCenterPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +15,11 @@ import java.awt.event.ActionEvent;
 
 public class EmployeeMainPanel extends JPanel
 {
+    public static final CardLayout centerCardLayout = new CardLayout(0, 0);
+    private final JPanel containerPanel = new JPanel(centerCardLayout);
+
+    private final EmployeeCenterPanel employeeCenterPanel = new EmployeeCenterPanel();
+
     private final TopPanel topPanel = new TopPanel("Employee");
     private final ShowSalePanel showSalePanel = new ShowSalePanel(Color.MAGENTA);
     private final SalePanel salePanel = new SalePanel();
@@ -27,7 +33,6 @@ public class EmployeeMainPanel extends JPanel
     private void initComponents()
     {
         //This
-        setBackground(Color.MAGENTA);
 
         //Show Sale Panel
         AbstractAction showSaleAction = new AbstractAction()
@@ -64,9 +69,13 @@ public class EmployeeMainPanel extends JPanel
 
     private void addComponents()
     {
+        //Container Panel
+        containerPanel.add(employeeCenterPanel);
+
         //This
         setLayout(new BorderLayout(0, 0));
         add(topPanel, BorderLayout.PAGE_START);
+        add(containerPanel, BorderLayout.CENTER);
         add(showSalePanel, BorderLayout.LINE_END);
     }
 }
