@@ -1,4 +1,4 @@
-package frames.admins.children;
+package frames.common.parents;
 
 /*
  * Created by Jonah on 4/30/2016.
@@ -17,26 +17,29 @@ import java.util.Calendar;
 
 import static frames.MainFrame.switchView;
 
-public class AdminTopPanel extends JPanel
+public class TopPanel extends JPanel
 {
     private JLabel timeAndDate = new JLabel("<html><div style='text-align: center;'>"
             + Strings.TIME + "<br>" + Strings.DATE + "</div></html>");
 
-    private final JLabel logo = new JLabel("Admin Panel");
+    private final JLabel logo = new JLabel();
 
     private final String[] uddComponents = {Strings.CUR_USER, "My Stats", "Settings", "Logout"};
     private final JComboBox<String> userDropdown = new JComboBox<>(uddComponents);
 
-    public AdminTopPanel()
+    public TopPanel(String curView)
     {
-        initComponents();
+        initComponents(curView);
         addComponents();
     }
 
-    private void initComponents()
+    private void initComponents(String curView)
     {
         //This
         setBackground(Color.GREEN);
+
+        //Logo Label
+        logo.setText(curView);
 
         //Time And Date
         timeAndDate.setMaximumSize(new Dimension(40, 35));

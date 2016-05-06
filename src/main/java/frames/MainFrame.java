@@ -5,7 +5,8 @@ package frames;
  */
 
 import frames.common.parents.LoginPanel;
-import frames.admins.parents.AdminMainPanel;
+import frames.admins.AdminMainPanel;
+import frames.employees.EmployeeMainPanel;
 import global.Strings;
 
 import javax.swing.*;
@@ -18,6 +19,7 @@ public class MainFrame
     private final LoginPanel adminLoginPanel = new LoginPanel();
 
     private final AdminMainPanel adminMainPanel = new AdminMainPanel();
+    private final EmployeeMainPanel employeeMainPanel = new EmployeeMainPanel();
 
     public static final CardLayout cardLayout = new CardLayout();
     public static final JPanel containerPanel = new JPanel(cardLayout);
@@ -50,6 +52,7 @@ public class MainFrame
 
         //Container Panel
         containerPanel.add(adminMainPanel, Strings.ADMIN_VIEW);
+        containerPanel.add(employeeMainPanel, Strings.EMPLOYEE_VIEW);
         containerPanel.add(adminLoginPanel, Strings.LOGIN_VIEW);
     }
 

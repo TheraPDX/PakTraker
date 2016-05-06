@@ -20,7 +20,7 @@ public class ShowSalePanel extends JPanel
     private void initComponents()
     {
         //This
-        setOpaque(false);
+        setBackground(Color.CYAN);
     }
 
     private void addComponents()
