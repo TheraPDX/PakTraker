@@ -5,9 +5,9 @@ package frames.admins;
  */
 
 import frames.admins.children.AdminCenterPanel;
-import frames.common.children.ShowSalePanel;
-import frames.common.parents.SalePanel;
-import frames.common.parents.TopPanel;
+import frames.common.ShowSalePanel;
+import frames.common.SalePanel;
+import frames.common.TopPanel;
 
 import javax.swing.*;
 import java.awt.*;

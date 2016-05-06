@@ -1,4 +1,4 @@
-package frames.common.parents;
+package frames.common;
 
 /*
  * Created by Jonah on 4/30/2016.

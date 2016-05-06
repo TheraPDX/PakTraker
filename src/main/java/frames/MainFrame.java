@@ -4,7 +4,7 @@ package frames;
  * Created by Jonah on 4/29/2016.
  */
 
-import frames.common.parents.LoginPanel;
+import frames.common.LoginPanel;
 import frames.admins.AdminMainPanel;
 import frames.employees.EmployeeMainPanel;
 import global.Strings;
