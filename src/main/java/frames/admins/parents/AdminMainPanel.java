@@ -18,7 +18,6 @@ public class AdminMainPanel extends JPanel
     private final AdminTopPanel adminTopPanel = new AdminTopPanel();
 
     public static final CardLayout centerCardLayout = new CardLayout();
-    public static final CardLayout rightCardLayout = new CardLayout();
     public static final JPanel containerPanel = new JPanel();
 
     private final AdminCenterPanel adminCenterPanel = new AdminCenterPanel();
@@ -79,7 +78,6 @@ public class AdminMainPanel extends JPanel
         containerPanel.add(adminCenterPanel, "Main View");
 
         saleContainerPanel.setLayout(new BorderLayout(0, 0));
-        //saleContainerPanel.add(salePanel, BorderLayout.CENTER);
         saleContainerPanel.add(showSalePanel, BorderLayout.CENTER);
 
         setLayout(new BorderLayout(0, 0));
