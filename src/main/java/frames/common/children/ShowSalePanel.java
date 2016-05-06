@@ -24,7 +24,6 @@ public class ShowSalePanel extends JPanel
 
     private void addComponents()
     {
-        //setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setLayout(new GridLayout(12, 1, 0, 0));
         add(showSalePanelBtn);
     }

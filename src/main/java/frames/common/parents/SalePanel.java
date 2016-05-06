@@ -9,7 +9,6 @@ import utils.DateUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class SalePanel extends JPanel
 {
@@ -47,6 +46,11 @@ public class SalePanel extends JPanel
         //This
         setBackground(Color.RED);
 
+        //Types Of Products Combobox
+        typesOfProducts.addItem("The Herb");
+        typesOfProducts.addItem("Wax");
+        typesOfProducts.addItem("Glass");
+
         //Amount Sold Text Field
         amountSoldTf.setBorder(null);
 
@@ -76,6 +80,7 @@ public class SalePanel extends JPanel
 
                 numOfImmPlantsLbl.setVisible(true);
                 numOfPlantsTf.setVisible(true);
+
                 x = 1;
                 y = 1;
 
@@ -116,7 +121,7 @@ public class SalePanel extends JPanel
             }
             else if(age >= 21)
             {
-                System.out.println("Legal Age For Recreational, Sell Away!");
+                System.out.println("Legal Age For Med & Recreational, Sell Away!");
             }
             else
             {
@@ -126,7 +131,13 @@ public class SalePanel extends JPanel
 
         resetSaleInfoBtn.addActionListener(e ->
         {
-
+            typesOfProducts.setSelectedIndex(0);
+            amountSoldTf.setText("Amount");
+            seedsOrPlantsBoughtCheckBox.setSelected(false);
+            numOfSeedsTf.setText("Seeds");
+            numOfPlantsTf.setText("Plants");
+            salePriceTf.setText("Price");
+            dobTf.setText("D.O.B.");
         });
     }
 
