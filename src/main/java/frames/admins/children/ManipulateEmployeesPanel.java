@@ -24,8 +24,6 @@ import javax.swing.*;
 
 public class ManipulateEmployeesPanel extends JPanel
 {
-    private int numOfEmployees = 10;
-
     private final EmployeeTableModel employeeTableModel = new EmployeeTableModel(3, 1);
     private JTable employeesTable = new JTable(employeeTableModel);
 
@@ -38,8 +36,6 @@ public class ManipulateEmployeesPanel extends JPanel
     private void initComponents()
     {
         //Employee Table Model
-        /*employeeTableModel.setRowCount(numOfEmployees);
-        employeeTableModel.setColumnCount(1);*/
         employeeTableModel.addValueAt("Noah Manders #2", 1, 1);
         employeeTableModel.addValueAt("Luis Munoz", 2, 1);
 
