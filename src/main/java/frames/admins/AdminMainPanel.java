@@ -5,9 +5,11 @@ package frames.admins;
  */
 
 import frames.admins.children.AdminCenterPanel;
+import frames.admins.children.ManipulateEmployeesPanel;
 import frames.common.ShowSalePanel;
 import frames.common.SalePanel;
 import frames.common.TopPanel;
+import global.Strings;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,6 +23,8 @@ public class AdminMainPanel extends JPanel
     public static final JPanel containerPanel = new JPanel();
 
     private final AdminCenterPanel adminCenterPanel = new AdminCenterPanel();
+    private final ManipulateEmployeesPanel manipulateEmployeesPanel = new ManipulateEmployeesPanel();
+
     private final ShowSalePanel showSalePanel = new ShowSalePanel(Color.CYAN);
     private final SalePanel salePanel = new SalePanel();
 
@@ -73,6 +77,7 @@ public class AdminMainPanel extends JPanel
         //Container Panel
         containerPanel.setLayout(centerCardLayout);
         containerPanel.add(adminCenterPanel, "Main View");
+        containerPanel.add(manipulateEmployeesPanel, Strings.MANIP_EMPLOYEES_VIEW);
 
         //This
         setLayout(new BorderLayout(0, 0));
@@ -81,6 +86,6 @@ public class AdminMainPanel extends JPanel
         add(showSalePanel, BorderLayout.LINE_END);
 
         //Select Visible View
-        centerCardLayout.show(containerPanel, "Main View");
+        centerCardLayout.show(containerPanel, Strings.MANIP_EMPLOYEES_VIEW);
     }
 }

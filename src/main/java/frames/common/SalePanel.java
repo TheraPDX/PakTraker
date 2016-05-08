@@ -135,7 +135,7 @@ public class SalePanel extends JPanel
             }
             else
             {
-                System.out.println("Don't Sell To Minors!");
+                System.out.println("Don't Sell To Minors Or Those Without Cards!");
             }
         });
 

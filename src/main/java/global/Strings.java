@@ -24,8 +24,7 @@ public class Strings
     public static final String LOGIN_VIEW = "Login";
     public static final String ADMIN_VIEW = "Admin";
     public static final String EMPLOYEE_VIEW = "Employee";
-    public static final String SALE_VIEW = "Sale";
-    public static final String SALE_VIEW_HIDDEN = "Sale Hidden";
+    public static final String MANIP_EMPLOYEES_VIEW = "Manipulate Employees";
     public static final String CUSTOMER_PROFILE_VIEW = "Customer";
     public static final String SETTINGS_VIEW = "Settings";
     public static final String MY_STATS_VIEW = "Stats";
