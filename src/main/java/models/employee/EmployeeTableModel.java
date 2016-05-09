@@ -18,8 +18,6 @@ public class EmployeeTableModel extends AbstractTableModel
         this.columns = columns;
 
         content = new Vector<>(rows);
-
-        content.add(0, "Noah Manders");
     }
 
     public void setRowCount(int rows)
@@ -30,7 +28,7 @@ public class EmployeeTableModel extends AbstractTableModel
     @Override
     public int getRowCount()
     {
-        return rows;
+        return content.size();
     }
 
     public void setColumnCount(int columns)
@@ -45,6 +43,12 @@ public class EmployeeTableModel extends AbstractTableModel
     }
 
     @Override
+    public String getColumnName(int column)
+    {
+        return "Employee Names";
+    }
+
+    @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
         return content.get(rowIndex);
@@ -53,6 +57,6 @@ public class EmployeeTableModel extends AbstractTableModel
     public void addValueAt(Object value, int row, int column)
     {
         content.add(row, value);
-        fireTableCellUpdated(row, column);
+        fireTableDataChanged();
     }
 }

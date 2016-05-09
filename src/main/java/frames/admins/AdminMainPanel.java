@@ -4,8 +4,7 @@ package frames.admins;
  * Created by Jonah on 4/30/2016.
  */
 
-import frames.admins.children.AdminCenterPanel;
-import frames.admins.children.ManipulateEmployeesPanel;
+import frames.admins.children.aMainPanelControls.AdminCenterPanel;
 import frames.common.ShowSalePanel;
 import frames.common.SalePanel;
 import frames.common.TopPanel;
@@ -23,7 +22,7 @@ public class AdminMainPanel extends JPanel
     public static final JPanel containerPanel = new JPanel();
 
     private final AdminCenterPanel adminCenterPanel = new AdminCenterPanel();
-    private final ManipulateEmployeesPanel manipulateEmployeesPanel = new ManipulateEmployeesPanel();
+    private final ControlEmployeesPanel controlEmployeesPanel = new ControlEmployeesPanel();
 
     private final ShowSalePanel showSalePanel = new ShowSalePanel(Color.CYAN);
     private final SalePanel salePanel = new SalePanel();
@@ -77,7 +76,7 @@ public class AdminMainPanel extends JPanel
         //Container Panel
         containerPanel.setLayout(centerCardLayout);
         containerPanel.add(adminCenterPanel, "Main View");
-        containerPanel.add(manipulateEmployeesPanel, Strings.MANIP_EMPLOYEES_VIEW);
+        containerPanel.add(controlEmployeesPanel, Strings.MANIP_EMPLOYEES_VIEW);
 
         //This
         setLayout(new BorderLayout(0, 0));

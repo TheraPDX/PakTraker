@@ -1,4 +1,4 @@
-package frames.admins.children;
+package frames.admins.children.aMainPanelControls;
 
 /*
  * Created by Jonah on 5/1/2016.
