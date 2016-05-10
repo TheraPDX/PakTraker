@@ -4,7 +4,7 @@ package frames.employees;
  * Created by Jonah on 5/6/2016.
  */
 
-import frames.common.ShowSalePanel;
+import frames.common.NavigationMenuPanel;
 import frames.common.SalePanel;
 import frames.common.TopPanel;
 import frames.employees.children.EmployeeCenterPanel;
@@ -21,7 +21,7 @@ public class EmployeeMainPanel extends JPanel
     private final EmployeeCenterPanel employeeCenterPanel = new EmployeeCenterPanel();
 
     private final TopPanel topPanel = new TopPanel("Employee");
-    private final ShowSalePanel showSalePanel = new ShowSalePanel(Color.MAGENTA);
+    private final NavigationMenuPanel navigationMenuPanel = new NavigationMenuPanel();
     private final SalePanel salePanel = new SalePanel();
 
     public EmployeeMainPanel()
@@ -40,7 +40,6 @@ public class EmployeeMainPanel extends JPanel
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                remove(showSalePanel);
                 add(salePanel, BorderLayout.LINE_END);
 
                 revalidate();
@@ -48,7 +47,7 @@ public class EmployeeMainPanel extends JPanel
             }
         };
 
-        showSalePanel.addButtonAction(employeeShowSaleAction);
+        navigationMenuPanel.addQuickSaleBtnAction(employeeShowSaleAction);
 
         //Hide Sale Panel
         AbstractAction employeeHideSaleAction = new AbstractAction()
@@ -57,7 +56,6 @@ public class EmployeeMainPanel extends JPanel
             public void actionPerformed(ActionEvent e)
             {
                 remove(salePanel);
-                add(showSalePanel, BorderLayout.LINE_END);
 
                 revalidate();
                 repaint();
@@ -75,7 +73,7 @@ public class EmployeeMainPanel extends JPanel
         //This
         setLayout(new BorderLayout(0, 0));
         add(topPanel, BorderLayout.PAGE_START);
+        add(navigationMenuPanel, BorderLayout.LINE_START);
         add(containerPanel, BorderLayout.CENTER);
-        add(showSalePanel, BorderLayout.LINE_END);
     }
 }

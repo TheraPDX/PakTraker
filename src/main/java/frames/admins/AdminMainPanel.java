@@ -5,7 +5,7 @@ package frames.admins;
  */
 
 import frames.admins.children.aMainPanelControls.AdminCenterPanel;
-import frames.common.ShowSalePanel;
+import frames.common.NavigationMenuPanel;
 import frames.common.SalePanel;
 import frames.common.TopPanel;
 import global.Strings;
@@ -21,10 +21,11 @@ public class AdminMainPanel extends JPanel
     public static final CardLayout centerCardLayout = new CardLayout();
     public static final JPanel containerPanel = new JPanel();
 
+    private final NavigationMenuPanel navigationMenuPanel = new NavigationMenuPanel();
+
     private final AdminCenterPanel adminCenterPanel = new AdminCenterPanel();
     private final ControlEmployeesPanel controlEmployeesPanel = new ControlEmployeesPanel();
 
-    private final ShowSalePanel showSalePanel = new ShowSalePanel(Color.CYAN);
     private final SalePanel salePanel = new SalePanel();
 
     public AdminMainPanel()
@@ -44,7 +45,6 @@ public class AdminMainPanel extends JPanel
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                remove(showSalePanel);
                 add(salePanel, BorderLayout.LINE_END);
 
                 revalidate();
@@ -52,7 +52,7 @@ public class AdminMainPanel extends JPanel
             }
         };
 
-        showSalePanel.addButtonAction(adminShowSaleAction);
+        navigationMenuPanel.addQuickSaleBtnAction(adminShowSaleAction);
 
         //Hide Sale Panel
         AbstractAction adminHideSaleAction = new AbstractAction()
@@ -61,7 +61,6 @@ public class AdminMainPanel extends JPanel
             public void actionPerformed(ActionEvent e)
             {
                 remove(salePanel);
-                add(showSalePanel, BorderLayout.LINE_END);
 
                 revalidate();
                 repaint();
@@ -81,10 +80,15 @@ public class AdminMainPanel extends JPanel
         //This
         setLayout(new BorderLayout(0, 0));
         add(topPanel, BorderLayout.PAGE_START);
+        add(navigationMenuPanel, BorderLayout.LINE_START);
         add(containerPanel, BorderLayout.CENTER);
-        add(showSalePanel, BorderLayout.LINE_END);
 
         //Select Visible View
-        centerCardLayout.show(containerPanel, Strings.MANIP_EMPLOYEES_VIEW);
+        centerCardLayout.show(containerPanel, "Main View");
+    }
+
+    public static void switchAdminView(String view)
+    {
+        centerCardLayout.show(containerPanel, view);
     }
 }
