@@ -26,5 +26,6 @@
     - Create one dimension for Navigation Menu Buttons
 
 * Bugs:
+    - Logging in doesn't update displayed username
 
 * Bugs Fixed:

@@ -11,7 +11,6 @@ import javax.swing.*;
 import java.awt.*;
 
 import static frames.MainFrame.switchView;
-import static global.Strings.setCurUser;
 
 public class LoginPanel extends JPanel
 {
@@ -87,7 +86,7 @@ public class LoginPanel extends JPanel
                 loginUtils.incorrectLogin(loginBtn);
             }
 
-            setCurUser(username);
+            Strings.setCurUser(username);
         });
     }
 
