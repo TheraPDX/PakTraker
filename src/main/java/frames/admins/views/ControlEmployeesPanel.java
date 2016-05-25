@@ -1,4 +1,4 @@
-package frames.admins;
+package frames.admins.views;
 
 /*
  * Created by Jonah on 5/7/2016.
@@ -18,7 +18,7 @@ package frames.admins;
     - Change Employees To Admins
  */
 
-import frames.admins.children.employeeControls.EmployeeTablePanel;
+import frames.admins.children.EmployeeTablePanel;
 
 import javax.swing.*;
 import java.awt.*;

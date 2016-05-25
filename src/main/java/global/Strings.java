@@ -11,14 +11,13 @@ import java.util.Calendar;
 public class Strings
 {
     //Cur User
-    public static final String CUR_USER = "Jonah Stieglitz";
-    public static final String CUR_USER_TYPE = "A";
+    public static String CUR_USER;
+    public static String CUR_USER_TYPE = "A";
 
     //User Types
-    public static final String ADMIN = "A";
-    public static final String EMPLOYEE = "E";
-    public static final String CUSTOMER_PROFILE = "CP";
-    public static final String GUEST = "G";
+    public static final String ADMIN = "Admin";
+    public static final String EMPLOYEE = "Employee";
+    public static final String CUSTOMER = "Customer";
 
     //Different Views
     public static final String LOGIN_VIEW = "Login";
@@ -38,4 +37,14 @@ public class Strings
     public static String DATE = date.format(calendar.getTime());
 
     public Strings(){}
+
+    public static void setCurUser(String user)
+    {
+        CUR_USER = user;
+    }
+
+    public static String getCurUser()
+    {
+        return CUR_USER;
+    }
 }

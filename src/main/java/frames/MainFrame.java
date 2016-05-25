@@ -4,9 +4,10 @@ package frames;
  * Created by Jonah on 4/29/2016.
  */
 
-import frames.common.LoginPanel;
 import frames.admins.AdminMainPanel;
+import frames.common.panels.LoginPanel;
 import frames.employees.EmployeeMainPanel;
+import frames.settings.SettingsPanel;
 import global.Strings;
 
 import javax.swing.*;
@@ -14,14 +15,14 @@ import java.awt.*;
 
 public class MainFrame
 {
-    public static final JFrame mainFrame = new JFrame("Pak Traker");
-
-    private final LoginPanel adminLoginPanel = new LoginPanel();
+    public final JFrame mainFrame = new JFrame("Pak Traker");
 
     private final AdminMainPanel adminMainPanel = new AdminMainPanel();
     private final EmployeeMainPanel employeeMainPanel = new EmployeeMainPanel();
+    private final LoginPanel adminLoginPanel = new LoginPanel();
+    private final SettingsPanel settingsPanel = new SettingsPanel();
 
-    public static final CardLayout cardLayout = new CardLayout();
+    public static final CardLayout cardLayout = new CardLayout(0, 0);
     public static final JPanel containerPanel = new JPanel(cardLayout);
 
     public MainFrame()
@@ -54,10 +55,12 @@ public class MainFrame
         containerPanel.add(adminMainPanel, Strings.ADMIN_VIEW);
         containerPanel.add(employeeMainPanel, Strings.EMPLOYEE_VIEW);
         containerPanel.add(adminLoginPanel, Strings.LOGIN_VIEW);
+        containerPanel.add(settingsPanel, Strings.SETTINGS_VIEW);
     }
 
     public static void switchView(String name)
     {
         cardLayout.show(containerPanel, name);
+        Strings.CUR_USER_TYPE = name;
     }
 }

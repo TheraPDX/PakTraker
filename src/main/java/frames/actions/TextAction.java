@@ -26,7 +26,7 @@ public class TextAction
             public void actionPerformed(ActionEvent e)
             {
                 button.setText(finalMsg);
-                button.setForeground(Color.BLACK);
+                button.setForeground(null);
             }
         };
     }

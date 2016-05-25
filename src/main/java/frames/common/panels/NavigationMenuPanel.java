@@ -1,4 +1,4 @@
-package frames.common;
+package frames.common.panels;
 
 /*
  * Created by Jonah on 5/10/2016.
@@ -21,7 +21,7 @@ public class NavigationMenuPanel extends JPanel
 
     private final JButton employeeInfoBtn = new JButton("Employees");
 
-    private final Dimension btnDimension = new Dimension(100, 25);
+    private final Dimension btnDimension = new Dimension(110, 25);
 
     public NavigationMenuPanel()
     {
@@ -42,12 +42,14 @@ public class NavigationMenuPanel extends JPanel
         homeBtn.setAlignmentX(CENTER_ALIGNMENT);
         homeBtn.setMinimumSize(btnDimension);
         homeBtn.setMaximumSize(btnDimension);
-        homeBtn.addActionListener(e1 -> switchAdminView("Main View"));
+        homeBtn.addActionListener(e -> switchAdminView("Main View"));
 
         //Employee Info Button
         employeeInfoBtn.setBackground(Colors.menuBtnColor);
         employeeInfoBtn.setAlignmentX(CENTER_ALIGNMENT);
-        employeeInfoBtn.addActionListener(e -> switchAdminView(Strings.MANIP_EMPLOYEES_VIEW));
+        employeeInfoBtn.setMinimumSize(btnDimension);
+        employeeInfoBtn.setMaximumSize(btnDimension);
+        employeeInfoBtn.addActionListener(e1 -> switchAdminView(Strings.MANIP_EMPLOYEES_VIEW));
     }
 
     private void addComponents()

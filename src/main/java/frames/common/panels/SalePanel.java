@@ -1,4 +1,4 @@
-package frames.common;
+package frames.common.panels;
 
 /*
  * Created by Jonah on 5/1/2016.

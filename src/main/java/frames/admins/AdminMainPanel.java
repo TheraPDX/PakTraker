@@ -4,10 +4,11 @@ package frames.admins;
  * Created by Jonah on 4/30/2016.
  */
 
-import frames.admins.children.aMainPanelControls.AdminCenterPanel;
-import frames.common.NavigationMenuPanel;
-import frames.common.SalePanel;
-import frames.common.TopPanel;
+import frames.admins.views.AdminCenterPanel;
+import frames.admins.views.ControlEmployeesPanel;
+import frames.common.panels.NavigationMenuPanel;
+import frames.common.panels.SalePanel;
+import frames.common.panels.TopPanel;
 import global.Strings;
 
 import javax.swing.*;
@@ -16,8 +17,6 @@ import java.awt.event.ActionEvent;
 
 public class AdminMainPanel extends JPanel
 {
-    private final TopPanel topPanel = new TopPanel("Admin");
-
     public static final CardLayout centerCardLayout = new CardLayout();
     public static final JPanel containerPanel = new JPanel();
 
@@ -27,6 +26,7 @@ public class AdminMainPanel extends JPanel
     private final ControlEmployeesPanel controlEmployeesPanel = new ControlEmployeesPanel();
 
     private final SalePanel salePanel = new SalePanel();
+    private final TopPanel topPanel = new TopPanel("Admin");
 
     public AdminMainPanel()
     {

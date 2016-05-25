@@ -1,4 +1,4 @@
-package frames.common;
+package frames.common.panels;
 
 /*
  * Created by Jonah on 4/30/2016.
@@ -24,11 +24,13 @@ public class TopPanel extends JPanel
 
     private final JLabel logo = new JLabel();
 
-    private final String[] uddComponents = {Strings.CUR_USER, "My Stats", "Settings", "Logout"};
-    private final JComboBox<String> userDropdown = new JComboBox<>(uddComponents);
+    private final JComboBox<String> userDropdown;
 
     public TopPanel(String curView)
     {
+        String[] uddComponents = {Strings.getCurUser(), "My Stats", "Settings", "Logout"};
+        userDropdown = new JComboBox<>(uddComponents);
+
         initComponents(curView);
         addComponents();
     }
@@ -77,9 +79,6 @@ public class TopPanel extends JPanel
 
                 switch(item)
                 {
-                    case Strings.CUR_USER:
-                        break;
-
                     case "Logout":
                         resetUddCb();
                         switchView(Strings.LOGIN_VIEW);
@@ -98,11 +97,6 @@ public class TopPanel extends JPanel
                     default:
                         resetUddCb();
                         break;
-                }
-
-                if(item.equals("Logout"))
-                {
-                    switchView(Strings.LOGIN_VIEW);
                 }
             }
         });

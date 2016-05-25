@@ -1,4 +1,4 @@
-package frames.common;
+package frames.common.panels;
 
 /*
  * Created by Jonah on 4/30/2016.
@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import static frames.MainFrame.switchView;
+import static global.Strings.setCurUser;
 
 public class LoginPanel extends JPanel
 {
@@ -18,7 +19,7 @@ public class LoginPanel extends JPanel
     private final JLabel passwordLbl = new JLabel("Password", SwingConstants.CENTER);
     private final JLabel acctTypeLbl = new JLabel("Account Type", SwingConstants.CENTER);
 
-    private final JTextField usernameTf = new JTextField("Username");
+    private static final JTextField usernameTf = new JTextField("Username");
     private final JPasswordField passwordTf = new JPasswordField("Password");
 
     private final String[] acctTypes = {"Admin", "Employee", "Customer"};
@@ -65,28 +66,28 @@ public class LoginPanel extends JPanel
         loginBtn.setAlignmentX(CENTER_ALIGNMENT);
         loginBtn.addActionListener(e ->
         {
-            switch(acctTypeCb.getSelectedItem().toString())
+            String accountType = acctTypeCb.getSelectedItem().toString();
+            String username = usernameTf.getText();
+            char[] password = passwordTf.getPassword();
+
+            if(accountType.equals("Admin") && loginUtils.correctAdminLogin(username, password))
             {
-                case "Admin":
-                    if(loginUtils.correctAdminLogin("Jonah", new char[] {'1'}))
-                        switchView(Strings.ADMIN_VIEW);
-                    break;
-
-                case "Employee":
-                    if(loginUtils.correctEmployeeLogin("Jonah", new char[] {'2'}))
-                        switchView(Strings.EMPLOYEE_VIEW);
-                    break;
-
-                /*Commented out to test default case (Incorrect)
-                case "Customer":
-                    if(loginUtils.correctCustomerLogin("Jonah", new char[] {'3'}))
-                        switchView(Strings.CUSTOMER_PROFILE_VIEW);
-                    break;*/
-
-                default:
-                    loginUtils.incorrectLogin(loginBtn);
-                    break;
+                switchView(Strings.ADMIN_VIEW);
             }
+            else if(accountType.equals("Employee") && loginUtils.correctEmployeeLogin(username, password))
+            {
+                switchView(Strings.EMPLOYEE_VIEW);
+            }
+            else if(accountType.equals("Customer") && loginUtils.correctCustomerLogin(username, password))
+            {
+                switchView(Strings.CUSTOMER_PROFILE_VIEW);
+            }
+            else
+            {
+                loginUtils.incorrectLogin(loginBtn);
+            }
+
+            setCurUser(username);
         });
     }
 

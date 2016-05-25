@@ -4,9 +4,9 @@ package frames.employees;
  * Created by Jonah on 5/6/2016.
  */
 
-import frames.common.NavigationMenuPanel;
-import frames.common.SalePanel;
-import frames.common.TopPanel;
+import frames.common.panels.NavigationMenuPanel;
+import frames.common.panels.SalePanel;
+import frames.common.panels.TopPanel;
 import frames.employees.children.EmployeeCenterPanel;
 
 import javax.swing.*;
