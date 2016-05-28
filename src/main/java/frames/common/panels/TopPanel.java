@@ -46,7 +46,7 @@ public class TopPanel extends JPanel
         //Time And Date
         timeAndDate.setMaximumSize(new Dimension(40, 35));
 
-        Timer timeUpdater = new Timer(30000, new AbstractAction()
+        Timer timeUpdater = new Timer(15000, new AbstractAction()
         {
             @Override
             public void actionPerformed(ActionEvent e)
