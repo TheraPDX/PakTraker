@@ -4,6 +4,7 @@ package frames.admins;
  * Created by Jonah on 4/30/2016.
  */
 
+import frames.actions.SalePanelActions;
 import frames.admins.views.AdminCenterPanel;
 import frames.admins.views.ControlEmployeesPanel;
 import frames.common.panels.NavigationMenuPanel;
@@ -13,7 +14,6 @@ import global.Strings;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class AdminMainPanel extends JPanel
 {
@@ -26,6 +26,7 @@ public class AdminMainPanel extends JPanel
     private final ControlEmployeesPanel controlEmployeesPanel = new ControlEmployeesPanel();
 
     private final SalePanel salePanel = new SalePanel();
+    private final SalePanelActions actions = new SalePanelActions();
     private final TopPanel topPanel = new TopPanel("Admin");
 
     public AdminMainPanel()
@@ -39,35 +40,9 @@ public class AdminMainPanel extends JPanel
         //This
         setBackground(Color.blue);
 
-        //Show Sale Panel
-        AbstractAction adminShowSaleAction = new AbstractAction()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                add(salePanel, BorderLayout.LINE_END);
-
-                revalidate();
-                repaint();
-            }
-        };
-
-        navigationMenuPanel.addQuickSaleBtnAction(adminShowSaleAction);
-
-        //Hide Sale Panel
-        AbstractAction adminHideSaleAction = new AbstractAction()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                remove(salePanel);
-
-                revalidate();
-                repaint();
-            }
-        };
-
-        salePanel.addHideSaleBtnAction(adminHideSaleAction);
+        //Actions
+        navigationMenuPanel.addQuickSaleBtnAction(actions.addAction(this, salePanel));
+        salePanel.addHideSaleBtnAction(actions.removeAction(this, salePanel));
     }
 
     private void addComponents()

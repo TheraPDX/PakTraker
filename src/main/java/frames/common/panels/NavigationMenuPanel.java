@@ -4,6 +4,7 @@ package frames.common.panels;
  * Created by Jonah on 5/10/2016.
  */
 
+import frames.components.buttons.MenuButton;
 import global.Colors;
 import global.Dimensions;
 import global.Strings;
@@ -11,17 +12,14 @@ import global.Strings;
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.admins.AdminMainPanel.switchAdminView;
-
 public class NavigationMenuPanel extends JPanel
 {
     private final JButton quickSaleBtn = new JButton("Quick Sale");
 
-    private final JButton homeBtn = new JButton("Home");
-
-    private final JButton employeeInfoBtn = new JButton("Employees");
-
-    private final Dimension btnDimension = new Dimension(110, 25);
+    private final MenuButton homeBtn = new MenuButton("Home", Colors.menuBtnColor, "Main View");
+    private final MenuButton employeeInfoBtn = new MenuButton("Employees", Colors.menuBtnColor, Strings.MANIP_EMPLOYEES_VIEW);
+    private final MenuButton productBtn = new MenuButton("Product", Colors.menuBtnColor, Strings.PRODUCT_INFO_VIEW);
+    private final MenuButton salesBtn = new MenuButton("Sales", Colors.menuBtnColor, Strings.SALES_INFO_VIEW);
 
     public NavigationMenuPanel()
     {
@@ -36,20 +34,6 @@ public class NavigationMenuPanel extends JPanel
         //Quick Sale Button
         quickSaleBtn.setBackground(Color.RED);
         quickSaleBtn.setAlignmentX(CENTER_ALIGNMENT);
-
-        //Home Button
-        homeBtn.setBackground(Colors.menuBtnColor);
-        homeBtn.setAlignmentX(CENTER_ALIGNMENT);
-        homeBtn.setMinimumSize(btnDimension);
-        homeBtn.setMaximumSize(btnDimension);
-        homeBtn.addActionListener(e -> switchAdminView("Main View"));
-
-        //Employee Info Button
-        employeeInfoBtn.setBackground(Colors.menuBtnColor);
-        employeeInfoBtn.setAlignmentX(CENTER_ALIGNMENT);
-        employeeInfoBtn.setMinimumSize(btnDimension);
-        employeeInfoBtn.setMaximumSize(btnDimension);
-        employeeInfoBtn.addActionListener(e1 -> switchAdminView(Strings.MANIP_EMPLOYEES_VIEW));
     }
 
     private void addComponents()
@@ -62,6 +46,11 @@ public class NavigationMenuPanel extends JPanel
         add(homeBtn);
         add(Box.createVerticalStrut(10));
         add(employeeInfoBtn);
+        add(Box.createVerticalStrut(10));
+        add(productBtn);
+        add(Box.createVerticalStrut(10));
+        add(salesBtn);
+        add(Box.createVerticalStrut(10));
     }
 
     @Override

@@ -12,6 +12,9 @@
     - Change User And Pass On First Use
         - Database Info (0 or 1) For First Use Or Not
 
+    - REUSABLE CODE!!
+        - Admin/Employee as parameters giving certain features
+
 * Features Implemented:
     - Combobox on login screen for admin, employee, etc.
     - Sales Panel
