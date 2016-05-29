@@ -71,9 +71,7 @@ public class LoginPanel extends JPanel
             String username = usernameTf.getText();
             char[] password = passwordTf.getPassword();
 
-            System.out.println(Strings.CUR_USER);
             Strings.CUR_USER = username;
-            System.out.println(Strings.CUR_USER);
 
             if(accountType.equals("Admin") && loginUtils.correctAdminLogin(username, password))
             {
