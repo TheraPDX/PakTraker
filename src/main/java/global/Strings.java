@@ -16,15 +16,4 @@ public class Strings
     public static final String CUSTOMER = "Customer";
 
     public Strings(){}
-
-    public static void setCurUser(String user)
-    {
-        CUR_USER = user;
-    }
-
-    public static String getCurUser()
-    {
-        return CUR_USER;
-    }
-
 }

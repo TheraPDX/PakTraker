@@ -32,12 +32,14 @@ public class TopPanel extends JPanel
 
     private final JLabel logo = new JLabel();
 
-    private final JComboBox<String> userDropdown;
+    static String[] uddContent = {"My Stats", "Settings", "Logout"};
+    private static DefaultComboBoxModel<String> dropDownModel = new DefaultComboBoxModel<>(uddContent);
+    private static JComboBox<String> userDropdown;
+
 
     public TopPanel(String curView)
     {
-        String[] uddComponents = {Strings.getCurUser(), "My Stats", "Settings", "Logout"};
-        userDropdown = new JComboBox<>(uddComponents);
+        userDropdown = new JComboBox<>(dropDownModel);
 
         initComponents(curView);
         addComponents();
@@ -88,6 +90,7 @@ public class TopPanel extends JPanel
                 switch(item)
                 {
                     case "Logout":
+                        dropDownModel.removeElement(Strings.CUR_USER);
                         resetUddCb();
                         switchView(Views.LOGIN);
                         break;
@@ -132,6 +135,12 @@ public class TopPanel extends JPanel
 
     private void resetUddCb()
     {
+        userDropdown.setSelectedIndex(0);
+    }
+
+    public static void updateComboBox(String item)
+    {
+        dropDownModel.insertElementAt(item, 0);
         userDropdown.setSelectedIndex(0);
     }
 }

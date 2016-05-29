@@ -12,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import static frames.MainFrame.switchView;
+import static frames.common.panels.TopPanel.updateComboBox;
 
 public class LoginPanel extends JPanel
 {
@@ -70,8 +71,13 @@ public class LoginPanel extends JPanel
             String username = usernameTf.getText();
             char[] password = passwordTf.getPassword();
 
+            System.out.println(Strings.CUR_USER);
+            Strings.CUR_USER = username;
+            System.out.println(Strings.CUR_USER);
+
             if(accountType.equals("Admin") && loginUtils.correctAdminLogin(username, password))
             {
+                updateComboBox(username);
                 switchView(Views.ADMIN);
             }
             else if(accountType.equals("Employee") && loginUtils.correctEmployeeLogin(username, password))
@@ -86,8 +92,6 @@ public class LoginPanel extends JPanel
             {
                 loginUtils.incorrectLogin(loginBtn);
             }
-
-            Strings.setCurUser(username);
         });
     }
 
