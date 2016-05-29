@@ -10,11 +10,11 @@ import java.awt.*;
 public class ActionButton extends JButton
 {
 
-    public ActionButton(String text, Color color)
+    public ActionButton(String text)
     {
         super(text);
 
-        setBackground(color);
+        setBackground(Color.GRAY);
     }
 
     @Override

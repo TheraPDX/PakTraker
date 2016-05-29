@@ -16,6 +16,8 @@ import global.Strings;
 import javax.swing.*;
 import java.awt.*;
 
+import static frames.components.buttons.ActionPanelButtons.employeeControlBtns;
+
 public class AdminMainPanel extends JPanel
 {
     private final JPanel containerPanel = new JPanel();
@@ -28,7 +30,7 @@ public class AdminMainPanel extends JPanel
     private final AdminCenterPanel adminCenterPanel = new AdminCenterPanel();
     private final ControlEmployeesPanel controlEmployeesPanel = new ControlEmployeesPanel();
 
-    private final ActionPanel actionPanel = new ActionPanel();
+    private static final ActionPanel actionPanel = new ActionPanel(employeeControlBtns());
 
     private final SalePanel salePanel = new SalePanel();
     private final SalePanelActions actions = new SalePanelActions();
@@ -48,6 +50,9 @@ public class AdminMainPanel extends JPanel
         //Actions
         navigationMenuPanel.addQuickSaleBtnAction(actions.addAction(this, salePanel));
         salePanel.addHideSaleBtnAction(actions.removeAction(this, salePanel));
+
+        //Action Panel
+        actionPanel.setVisible(false);
     }
 
     private void addComponents()
@@ -69,11 +74,28 @@ public class AdminMainPanel extends JPanel
         add(containerPanel, BorderLayout.CENTER);
 
         //Select Visible View
-        centerCardLayout.show(clContainerPanel, "Main View");
+        centerCardLayout.show(clContainerPanel, Strings.MAIN_ADMIN_VIEW);
     }
 
     public static void switchAdminView(String view)
     {
-        centerCardLayout.show(clContainerPanel, view);
+        switch(view)
+        {
+            case Strings.MAIN_ADMIN_VIEW:
+                actionPanel.setVisible(false);
+                centerCardLayout.show(clContainerPanel, view);
+                break;
+            case Strings.MANIP_EMPLOYEES_VIEW:
+                actionPanel.setCurBtns(employeeControlBtns());
+                actionPanel.setVisible(true);
+                centerCardLayout.show(clContainerPanel, view);
+                break;
+            case "Other View":
+                //Add each view switch handling here
+                centerCardLayout.show(clContainerPanel, view);
+                break;
+            default:
+                break;
+        }
     }
 }

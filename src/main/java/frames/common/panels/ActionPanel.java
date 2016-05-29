@@ -4,7 +4,6 @@ package frames.common.panels;
  * Created by Jonah on 5/28/2016.
  */
 
-import frames.components.buttons.ActionButton;
 import global.Dimensions;
 
 import javax.swing.*;
@@ -12,9 +11,12 @@ import java.awt.*;
 
 public class ActionPanel extends JPanel
 {
+    private JButton[] curBtns;
 
-    public ActionPanel()
+    public ActionPanel(JButton[] buttons)
     {
+        curBtns = buttons;
+
         initComponents();
         addComponents();
     }
@@ -29,8 +31,22 @@ public class ActionPanel extends JPanel
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 
         add(Box.createHorizontalGlue());
-        add(new ActionButton("Action 1", Color.GRAY));
+
+        for(JButton button : curBtns)
+        {
+            add(button);
+            add(Box.createHorizontalStrut(10));
+        }
+
         add(Box.createHorizontalGlue());
+    }
+
+    public void setCurBtns(JButton[] buttons)
+    {
+        curBtns = buttons;
+
+        revalidate();
+        repaint();
     }
 
     @Override

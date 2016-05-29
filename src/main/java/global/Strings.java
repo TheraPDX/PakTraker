@@ -29,6 +29,7 @@ public class Strings
     public static final String MY_STATS_VIEW = "Stats";
     public static final String PRODUCT_INFO_VIEW = "Product Info";
     public static final String SALES_INFO_VIEW = "Sales Info";
+    public static final String MAIN_ADMIN_VIEW = "Admin Main";
 
     //Time and Date
     static DateFormat date = new SimpleDateFormat("M/dd/yy");
@@ -37,6 +38,7 @@ public class Strings
 
     public static String TIME = time.format(calendar.getTime());
     public static String DATE = date.format(calendar.getTime());
+
 
 
     public Strings(){}
