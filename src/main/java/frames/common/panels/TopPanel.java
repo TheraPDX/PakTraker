@@ -6,6 +6,7 @@ package frames.common.panels;
 
 import global.Dimensions;
 import global.Strings;
+import global.Views;
 
 import javax.swing.*;
 import java.awt.*;
@@ -81,17 +82,17 @@ public class TopPanel extends JPanel
                 {
                     case "Logout":
                         resetUddCb();
-                        switchView(Strings.LOGIN_VIEW);
+                        switchView(Views.LOGIN);
                         break;
 
                     case "Settings":
                         resetUddCb();
-                        switchView(Strings.SETTINGS_VIEW);
+                        switchView(Views.SETTINGS);
                         break;
 
                     case "My Stats":
                         resetUddCb();
-                        switchView(Strings.MY_STATS_VIEW);
+                        switchView(Views.USER_STATS);
                         break;
 
                     default:

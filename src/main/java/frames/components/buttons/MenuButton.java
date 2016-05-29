@@ -11,7 +11,7 @@ import static frames.admins.AdminMainPanel.switchAdminView;
 
 public class MenuButton extends JButton
 {
-    public MenuButton(String title, Color color, String actionView)
+    public MenuButton(String title, Color color, String view)
     {
         super(title);
 
@@ -20,6 +20,6 @@ public class MenuButton extends JButton
         setMinimumSize(new Dimension(110, 25));
         setMaximumSize(new Dimension(110, 25));
 
-        addActionListener(e -> switchAdminView(actionView));
+        addActionListener(e -> switchAdminView(view));
     }
 }

@@ -7,7 +7,7 @@ package frames.common.panels;
 import frames.components.buttons.MenuButton;
 import global.Colors;
 import global.Dimensions;
-import global.Strings;
+import global.Views;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,10 +16,10 @@ public class NavigationMenuPanel extends JPanel
 {
     private final JButton quickSaleBtn = new JButton("Quick Sale");
 
-    private final MenuButton homeBtn = new MenuButton("Home", Colors.menuBtnColor, "Main View");
-    private final MenuButton employeeInfoBtn = new MenuButton("Employees", Colors.menuBtnColor, Strings.MANIP_EMPLOYEES_VIEW);
-    private final MenuButton productBtn = new MenuButton("Product", Colors.menuBtnColor, Strings.PRODUCT_INFO_VIEW);
-    private final MenuButton salesBtn = new MenuButton("Sales", Colors.menuBtnColor, Strings.SALES_INFO_VIEW);
+    private final MenuButton homeBtn = new MenuButton("Home", Colors.menuBtnColor, Views.ADMIN_MAIN);
+    private final MenuButton employeeInfoBtn = new MenuButton("Employees", Colors.menuBtnColor, Views.ADMIN_EMPLOYEE_CONTROLLER);
+    private final MenuButton productBtn = new MenuButton("Product", Colors.menuBtnColor, Views.ADMIN_PRODUCT_INFO);
+    private final MenuButton salesBtn = new MenuButton("Sales", Colors.menuBtnColor, Views.ADMIN_SALES_INFO);
 
     public NavigationMenuPanel()
     {

@@ -5,6 +5,7 @@ package frames.common.panels;
  */
 
 import global.Strings;
+import global.Views;
 import utils.datebase.LoginUtils;
 
 import javax.swing.*;
@@ -71,15 +72,15 @@ public class LoginPanel extends JPanel
 
             if(accountType.equals("Admin") && loginUtils.correctAdminLogin(username, password))
             {
-                switchView(Strings.ADMIN_VIEW);
+                switchView(Views.ADMIN);
             }
             else if(accountType.equals("Employee") && loginUtils.correctEmployeeLogin(username, password))
             {
-                switchView(Strings.EMPLOYEE_VIEW);
+                switchView(Views.EMPLOYEE);
             }
             else if(accountType.equals("Customer") && loginUtils.correctCustomerLogin(username, password))
             {
-                switchView(Strings.CUSTOMER_PROFILE_VIEW);
+                switchView(Views.CUSTOMER);
             }
             else
             {

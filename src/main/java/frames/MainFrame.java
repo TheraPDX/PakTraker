@@ -9,6 +9,7 @@ import frames.common.panels.LoginPanel;
 import frames.employees.EmployeeMainPanel;
 import frames.settings.SettingsPanel;
 import global.Strings;
+import global.Views;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,7 +36,7 @@ public class MainFrame
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-        switchView(Strings.LOGIN_VIEW);
+        switchView(Views.LOGIN);
 
         mainFrame.pack();
         mainFrame.setVisible(true);
@@ -52,10 +53,10 @@ public class MainFrame
         mainFrame.add(containerPanel);
 
         //Container Panel
-        containerPanel.add(adminMainPanel, Strings.ADMIN_VIEW);
-        containerPanel.add(employeeMainPanel, Strings.EMPLOYEE_VIEW);
-        containerPanel.add(adminLoginPanel, Strings.LOGIN_VIEW);
-        containerPanel.add(settingsPanel, Strings.SETTINGS_VIEW);
+        containerPanel.add(adminMainPanel, Views.ADMIN);
+        containerPanel.add(employeeMainPanel, Views.EMPLOYEE);
+        containerPanel.add(adminLoginPanel, Views.LOGIN);
+        containerPanel.add(settingsPanel, Views.SETTINGS);
     }
 
     public static void switchView(String name)

@@ -11,7 +11,7 @@ import frames.common.panels.ActionPanel;
 import frames.common.panels.NavigationMenuPanel;
 import frames.common.panels.SalePanel;
 import frames.common.panels.TopPanel;
-import global.Strings;
+import global.Views;
 
 import javax.swing.*;
 import java.awt.*;
@@ -64,8 +64,8 @@ public class AdminMainPanel extends JPanel
 
         //Card Layout Container Panel
         clContainerPanel.setLayout(centerCardLayout);
-        clContainerPanel.add(adminCenterPanel, "Main View");
-        clContainerPanel.add(controlEmployeesPanel, Strings.MANIP_EMPLOYEES_VIEW);
+        clContainerPanel.add(adminCenterPanel, Views.ADMIN_MAIN);
+        clContainerPanel.add(controlEmployeesPanel, Views.ADMIN_EMPLOYEE_CONTROLLER);
 
         //This
         setLayout(new BorderLayout(0, 0));
@@ -74,24 +74,24 @@ public class AdminMainPanel extends JPanel
         add(containerPanel, BorderLayout.CENTER);
 
         //Select Visible View
-        centerCardLayout.show(clContainerPanel, Strings.MAIN_ADMIN_VIEW);
+        centerCardLayout.show(clContainerPanel, Views.ADMIN_MAIN);
     }
 
     public static void switchAdminView(String view)
     {
         switch(view)
         {
-            case Strings.MAIN_ADMIN_VIEW:
+            case Views.ADMIN_MAIN:
                 actionPanel.setVisible(false);
                 centerCardLayout.show(clContainerPanel, view);
                 break;
-            case Strings.MANIP_EMPLOYEES_VIEW:
+            case Views.ADMIN_EMPLOYEE_CONTROLLER:
                 actionPanel.setCurBtns(employeeControlBtns());
                 actionPanel.setVisible(true);
                 centerCardLayout.show(clContainerPanel, view);
                 break;
-            case "Other View":
-                //Add each view switch handling here
+            case Views.SETTINGS:
+                //Add each viewAsString switch handling here
                 centerCardLayout.show(clContainerPanel, view);
                 break;
             default:
