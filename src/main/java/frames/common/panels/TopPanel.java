@@ -20,8 +20,15 @@ import static frames.MainFrame.switchView;
 
 public class TopPanel extends JPanel
 {
+    DateFormat date = new SimpleDateFormat("M/dd/yy");
+    DateFormat time = new SimpleDateFormat("h:mm");
+    Calendar calendar = Calendar.getInstance();
+
+    String TIME = time.format(calendar.getTime());
+    String DATE = date.format(calendar.getTime());
+
     private JLabel timeAndDate = new JLabel("<html><div style='text-align: center;'>"
-            + Strings.TIME + "<br>" + Strings.DATE + "</div></html>");
+            + TIME + "<br>" + DATE + "</div></html>");
 
     private final JLabel logo = new JLabel();
 
