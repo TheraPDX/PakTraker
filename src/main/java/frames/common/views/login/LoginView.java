@@ -1,20 +1,16 @@
-package frames.common.panels;
+package frames.common.views.login;
 
 /*
  * Created by Jonah on 4/30/2016.
  */
 
-import global.Strings;
-import global.Views;
-import utils.datebase.LoginUtils;
+import frames.common.controllers.login.LoginController;
+import frames.interfaces.views.IMainView;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.MainFrame.switchView;
-import static frames.common.panels.TopPanel.updateComboBox;
-
-public class LoginPanel extends JPanel
+public class LoginView extends JPanel implements IMainView
 {
     private final JLabel usernameLbl = new JLabel("Username", SwingConstants.CENTER);
     private final JLabel passwordLbl = new JLabel("Password", SwingConstants.CENTER);
@@ -29,15 +25,17 @@ public class LoginPanel extends JPanel
 
     private final Dimension loginComponentsDimension = new Dimension(125, 30);
 
-    private final LoginUtils loginUtils = new LoginUtils();
+    private final LoginController loginController;
 
-    public LoginPanel()
+    public LoginView()
     {
+        loginController = new LoginController(usernameTf, passwordTf, acctTypeCb, loginBtn);
+
         initComponents();
         addComponents();
     }
 
-    private void initComponents()
+    public void initComponents()
     {
         //Username Label
         usernameLbl.setAlignmentX(CENTER_ALIGNMENT);
@@ -65,35 +63,10 @@ public class LoginPanel extends JPanel
 
         //Login Button
         loginBtn.setAlignmentX(CENTER_ALIGNMENT);
-        loginBtn.addActionListener(e ->
-        {
-            String accountType = acctTypeCb.getSelectedItem().toString();
-            String username = usernameTf.getText();
-            char[] password = passwordTf.getPassword();
-
-            Strings.CUR_USER = username;
-
-            if(accountType.equals("Admin") && loginUtils.correctAdminLogin(username, password))
-            {
-                updateComboBox(username);
-                switchView(Views.ADMIN);
-            }
-            else if(accountType.equals("Employee") && loginUtils.correctEmployeeLogin(username, password))
-            {
-                switchView(Views.EMPLOYEE);
-            }
-            else if(accountType.equals("Customer") && loginUtils.correctCustomerLogin(username, password))
-            {
-                switchView(Views.CUSTOMER);
-            }
-            else
-            {
-                loginUtils.incorrectLogin(loginBtn);
-            }
-        });
+        loginBtn.addActionListener(loginController.getLoginBtnAction());
     }
 
-    private void addComponents()
+    public void addComponents()
     {
         //This
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));

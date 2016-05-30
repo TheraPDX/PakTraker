@@ -1,4 +1,4 @@
-package frames.admins.views.employeeControl;
+package frames.admins.views.staffControl;
 
 /*
  * Created by Jonah on 5/7/2016.
@@ -18,19 +18,19 @@ package frames.admins.views.employeeControl;
     - Change Employees To Admins
  */
 
-import frames.admins.controllers.employeeControl.AdminEmployeeController;
-import frames.admins.views.employeeControl.children.EmployeeTableView;
+import frames.admins.controllers.staffControl.AdminStaffController;
+import frames.admins.views.staffControl.children.StaffTableView;
 import frames.interfaces.views.IMainView;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class EmployeeControlView extends JPanel implements IMainView
+public class StaffControlView extends JPanel implements IMainView
 {
-    private final EmployeeTableView employeeTableView = new EmployeeTableView();
-    private final AdminEmployeeController adminEmployeeController = new AdminEmployeeController(this);
+    private final StaffTableView staffTableView = new StaffTableView();
+    private final AdminStaffController adminStaffController = new AdminStaffController(this);
 
-    public EmployeeControlView()
+    public StaffControlView()
     {
         initComponents();
         addComponents();
@@ -45,6 +45,6 @@ public class EmployeeControlView extends JPanel implements IMainView
     {
         setLayout(new BorderLayout(0, 0));
 
-        add(new JScrollPane(employeeTableView), BorderLayout.EAST);
+        add(new JScrollPane(staffTableView), BorderLayout.EAST);
     }
 }

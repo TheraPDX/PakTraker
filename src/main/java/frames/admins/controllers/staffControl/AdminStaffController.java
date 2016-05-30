@@ -1,4 +1,4 @@
-package frames.admins.controllers.employeeControl;
+package frames.admins.controllers.staffControl;
 
 /*
  * Created by Jonah on 5/29/2016.
@@ -9,18 +9,18 @@ import frames.interfaces.controllers.IMainController;
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminEmployeeController implements IMainController
+public class AdminStaffController implements IMainController
 {
     JPanel panel = new JPanel();
     CardLayout cardLayout = new CardLayout();
 
-    public AdminEmployeeController(JPanel panel, CardLayout cardLayout)
+    public AdminStaffController(JPanel panel, CardLayout cardLayout)
     {
         this.panel = panel;
         this.cardLayout = cardLayout;
     }
 
-    public AdminEmployeeController(JPanel panel)
+    public AdminStaffController(JPanel panel)
     {
         this.panel = panel;
     }

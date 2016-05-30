@@ -5,7 +5,7 @@ package frames.admins.views.main;
  */
 
 import frames.actions.SalePanelActions;
-import frames.admins.views.employeeControl.EmployeeControlView;
+import frames.admins.views.staffControl.StaffControlView;
 import frames.common.panels.ActionPanel;
 import frames.common.panels.NavigationMenuPanel;
 import frames.common.panels.SalePanel;
@@ -15,7 +15,7 @@ import global.Views;
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.components.buttons.ActionPanelButtons.employeeControlBtns;
+import static frames.components.buttons.ActionPanelButtons.staffControlBtns;
 
 public class AdminMainPanel extends JPanel
 {
@@ -27,9 +27,9 @@ public class AdminMainPanel extends JPanel
     private final NavigationMenuPanel navigationMenuPanel = new NavigationMenuPanel();
 
     private final AdminViewsContainer adminViewsContainer = new AdminViewsContainer();
-    private final EmployeeControlView employeeControlView = new EmployeeControlView();
+    private final StaffControlView staffControlView = new StaffControlView();
 
-    private static final ActionPanel actionPanel = new ActionPanel(employeeControlBtns());
+    private static final ActionPanel actionPanel = new ActionPanel(staffControlBtns());
 
     private final SalePanel salePanel = new SalePanel();
     private final SalePanelActions actions = new SalePanelActions();
@@ -64,7 +64,7 @@ public class AdminMainPanel extends JPanel
         //Card Layout Container Panel
         clContainerPanel.setLayout(centerCardLayout);
         clContainerPanel.add(adminViewsContainer, Views.ADMIN_MAIN);
-        clContainerPanel.add(employeeControlView, Views.ADMIN_EMPLOYEE_CONTROLLER);
+        clContainerPanel.add(staffControlView, Views.ADMIN_EMPLOYEE_CONTROLLER);
 
         //This
         setLayout(new BorderLayout(0, 0));
@@ -85,7 +85,7 @@ public class AdminMainPanel extends JPanel
                 centerCardLayout.show(clContainerPanel, view);
                 break;
             case Views.ADMIN_EMPLOYEE_CONTROLLER:
-                actionPanel.setCurBtns(employeeControlBtns());
+                actionPanel.setCurBtns(staffControlBtns());
                 actionPanel.setVisible(true);
                 centerCardLayout.show(clContainerPanel, view);
                 break;

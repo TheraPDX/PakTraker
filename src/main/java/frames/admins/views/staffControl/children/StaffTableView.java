@@ -1,23 +1,23 @@
-package frames.admins.views.employeeControl.children;
+package frames.admins.views.staffControl.children;
 
 /*
  * Created by Jonah on 5/8/2016.
  */
 
-import frames.admins.controllers.employeeControl.children.EmployeeTableController;
+import frames.admins.controllers.staffControl.children.StaffTableController;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class EmployeeTableView extends JTable
+public class StaffTableView extends JTable
 {
     ListSelectionModel cellSelectionModel;
-    EmployeeTableController tableController;
+    StaffTableController tableController;
 
-    public EmployeeTableView()
+    public StaffTableView()
     {
         cellSelectionModel = this.getSelectionModel();
-        tableController = new EmployeeTableController(this, cellSelectionModel);
+        tableController = new StaffTableController(this, cellSelectionModel);
 
         initComponents();
     }

@@ -1,21 +1,21 @@
-package frames.admins.controllers.employeeControl.children;
+package frames.admins.controllers.staffControl.children;
 
 /*
  * Created by Jonah on 5/29/2016.
  */
 
-import frames.admins.models.employeeControl.children.EmployeeTableModel;
+import frames.admins.models.staffControl.children.StaffTableModel;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
-public class EmployeeTableController
+public class StaffTableController
 {
     JTable table = new JTable();
     ListSelectionModel model;
 
-    String[][] employees = {
+    String[][] staff = {
             {"Jonah Stieglitz"},
             {"Noah Manders"},
             {"Luis Munoz"}
@@ -23,7 +23,7 @@ public class EmployeeTableController
 
     String[] columns = {"Employees"};
 
-    public EmployeeTableController(JTable table, ListSelectionModel model)
+    public StaffTableController(JTable table, ListSelectionModel model)
     {
         this.table = table;
         this.model = model;
@@ -31,7 +31,7 @@ public class EmployeeTableController
 
     public DefaultTableModel getTableModel()
     {
-        return new EmployeeTableModel(employees, columns);
+        return new StaffTableModel(staff, columns);
     }
 
     public ListSelectionListener getSelectionListener()

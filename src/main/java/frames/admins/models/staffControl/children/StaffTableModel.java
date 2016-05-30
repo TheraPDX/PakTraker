@@ -1,4 +1,4 @@
-package frames.admins.models.employeeControl.children;
+package frames.admins.models.staffControl.children;
 
 /*
  * Created by Jonah on 5/29/2016.
@@ -6,9 +6,9 @@ package frames.admins.models.employeeControl.children;
 
 import javax.swing.table.DefaultTableModel;
 
-public class EmployeeTableModel extends DefaultTableModel
+public class StaffTableModel extends DefaultTableModel
 {
-    public EmployeeTableModel(String[][] employees, String[] columns)
+    public StaffTableModel(String[][] employees, String[] columns)
     {
         super(employees, columns);
     }

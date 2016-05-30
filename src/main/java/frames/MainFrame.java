@@ -5,7 +5,7 @@ package frames;
  */
 
 import frames.admins.views.main.AdminMainPanel;
-import frames.common.panels.LoginPanel;
+import frames.common.views.login.LoginView;
 import frames.employees.EmployeeMainPanel;
 import frames.settings.SettingsPanel;
 import global.Strings;
@@ -20,7 +20,7 @@ public class MainFrame
 
     private final AdminMainPanel adminMainPanel = new AdminMainPanel();
     private final EmployeeMainPanel employeeMainPanel = new EmployeeMainPanel();
-    private final LoginPanel adminLoginPanel = new LoginPanel();
+    private final LoginView adminLoginView = new LoginView();
     private final SettingsPanel settingsPanel = new SettingsPanel();
 
     public static final CardLayout cardLayout = new CardLayout(0, 0);
@@ -55,7 +55,7 @@ public class MainFrame
         //Container Panel
         containerPanel.add(adminMainPanel, Views.ADMIN);
         containerPanel.add(employeeMainPanel, Views.EMPLOYEE);
-        containerPanel.add(adminLoginPanel, Views.LOGIN);
+        containerPanel.add(adminLoginView, Views.LOGIN);
         containerPanel.add(settingsPanel, Views.SETTINGS);
     }
 
