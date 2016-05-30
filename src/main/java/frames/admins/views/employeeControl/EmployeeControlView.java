@@ -18,12 +18,17 @@ package frames.admins.views.employeeControl;
     - Change Employees To Admins
  */
 
+import frames.admins.controllers.employeeControl.AdminEmployeeController;
+import frames.admins.views.employeeControl.children.EmployeeTableView;
+import frames.interfaces.views.IMainView;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class EmployeeControlView extends JPanel
+public class EmployeeControlView extends JPanel implements IMainView
 {
-    private final EmployeeTablePanel employeeTablePanel = new EmployeeTablePanel();
+    private final EmployeeTableView employeeTableView = new EmployeeTableView();
+    private final AdminEmployeeController adminEmployeeController = new AdminEmployeeController(this);
 
     public EmployeeControlView()
     {
@@ -31,15 +36,15 @@ public class EmployeeControlView extends JPanel
         addComponents();
     }
 
-    private void initComponents()
+    public void initComponents()
     {
         setBackground(Color.CYAN);
     }
 
-    private void addComponents()
+    public void addComponents()
     {
         setLayout(new BorderLayout(0, 0));
 
-        add(employeeTablePanel, BorderLayout.EAST);
+        add(new JScrollPane(employeeTableView), BorderLayout.EAST);
     }
 }

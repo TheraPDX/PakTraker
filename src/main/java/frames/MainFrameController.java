@@ -1,13 +1,14 @@
-/*
- * Created by Jonah on 4/30/2016.
- */
+package frames;
 
-import frames.MainFrame;
+/*
+ * Created by Jonah on 5/29/2016.
+ */
 
 import javax.swing.*;
 
-public class RunPakTraker
+public class MainFrameController
 {
+
     public static void main(String[] args)
     {
         SwingUtilities.invokeLater(MainFrame::new);
