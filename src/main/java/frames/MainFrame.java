@@ -4,7 +4,7 @@ package frames;
  * Created by Jonah on 4/29/2016.
  */
 
-import frames.admins.AdminMainPanel;
+import frames.admins.views.main.AdminMainPanel;
 import frames.common.panels.LoginPanel;
 import frames.employees.EmployeeMainPanel;
 import frames.settings.SettingsPanel;

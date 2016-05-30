@@ -1,12 +1,11 @@
-package frames.admins;
+package frames.admins.views.main;
 
 /*
  * Created by Jonah on 4/30/2016.
  */
 
 import frames.actions.SalePanelActions;
-import frames.admins.views.AdminCenterPanel;
-import frames.admins.views.ControlEmployeesPanel;
+import frames.admins.views.employeeControl.EmployeeControlView;
 import frames.common.panels.ActionPanel;
 import frames.common.panels.NavigationMenuPanel;
 import frames.common.panels.SalePanel;
@@ -27,8 +26,8 @@ public class AdminMainPanel extends JPanel
 
     private final NavigationMenuPanel navigationMenuPanel = new NavigationMenuPanel();
 
-    private final AdminCenterPanel adminCenterPanel = new AdminCenterPanel();
-    private final ControlEmployeesPanel controlEmployeesPanel = new ControlEmployeesPanel();
+    private final AdminViewsContainer adminViewsContainer = new AdminViewsContainer();
+    private final EmployeeControlView employeeControlView = new EmployeeControlView();
 
     private static final ActionPanel actionPanel = new ActionPanel(employeeControlBtns());
 
@@ -64,8 +63,8 @@ public class AdminMainPanel extends JPanel
 
         //Card Layout Container Panel
         clContainerPanel.setLayout(centerCardLayout);
-        clContainerPanel.add(adminCenterPanel, Views.ADMIN_MAIN);
-        clContainerPanel.add(controlEmployeesPanel, Views.ADMIN_EMPLOYEE_CONTROLLER);
+        clContainerPanel.add(adminViewsContainer, Views.ADMIN_MAIN);
+        clContainerPanel.add(employeeControlView, Views.ADMIN_EMPLOYEE_CONTROLLER);
 
         //This
         setLayout(new BorderLayout(0, 0));

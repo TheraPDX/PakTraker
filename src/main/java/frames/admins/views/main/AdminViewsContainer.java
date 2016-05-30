@@ -1,4 +1,4 @@
-package frames.admins.views;
+package frames.admins.views.main;
 
 /*
  * Created by Jonah on 5/1/2016.
@@ -7,10 +7,10 @@ package frames.admins.views;
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminCenterPanel extends JPanel
+public class AdminViewsContainer extends JPanel
 {
 
-    public AdminCenterPanel()
+    public AdminViewsContainer()
     {
         initComponents();
         addComponents();

@@ -7,7 +7,7 @@ package frames.components.buttons;
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.admins.AdminMainPanel.switchAdminView;
+import static frames.admins.views.main.AdminMainPanel.switchAdminView;
 
 public class MenuButton extends JButton
 {

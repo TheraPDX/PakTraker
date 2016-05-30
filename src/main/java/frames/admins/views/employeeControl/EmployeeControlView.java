@@ -1,4 +1,4 @@
-package frames.admins.views;
+package frames.admins.views.employeeControl;
 
 /*
  * Created by Jonah on 5/7/2016.
@@ -18,16 +18,14 @@ package frames.admins.views;
     - Change Employees To Admins
  */
 
-import frames.admins.children.EmployeeTablePanel;
-
 import javax.swing.*;
 import java.awt.*;
 
-public class ControlEmployeesPanel extends JPanel
+public class EmployeeControlView extends JPanel
 {
     private final EmployeeTablePanel employeeTablePanel = new EmployeeTablePanel();
 
-    public ControlEmployeesPanel()
+    public EmployeeControlView()
     {
         initComponents();
         addComponents();

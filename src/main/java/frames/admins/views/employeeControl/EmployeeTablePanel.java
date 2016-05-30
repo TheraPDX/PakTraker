@@ -1,4 +1,4 @@
-package frames.admins.children;
+package frames.admins.views.employeeControl;
 
 /*
  * Created by Jonah on 5/8/2016.
