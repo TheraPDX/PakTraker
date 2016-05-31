@@ -9,7 +9,7 @@ import frames.admins.views.center.AdminCenterView;
 import frames.admins.views.staffControl.StaffControlView;
 import frames.common.panels.ActionPanel;
 import frames.common.panels.SalePanel;
-import frames.common.panels.TopPanel;
+import frames.common.views.top.TopPanelView;
 import frames.common.views.container.ViewContainer;
 import frames.common.views.navMenu.NavMenuView;
 import global.Views;
@@ -32,7 +32,7 @@ public class AdminView extends JPanel
     private static final ActionPanel actionPanel = new ActionPanel(staffControlBtns());
 
     private final SalePanel salePanel = new SalePanel();
-    private final TopPanel topPanel = new TopPanel("Admin");
+    private final TopPanelView topPanelView = new TopPanelView("Admin");
     private final NavMenuView navMenuView = new NavMenuView(this, salePanel);
 
     private final AdminController adminController = new AdminController(centerCardLayout, viewContainer);
@@ -68,7 +68,7 @@ public class AdminView extends JPanel
 
         //This
         setLayout(new BorderLayout(0, 0));
-        add(topPanel, BorderLayout.PAGE_START);
+        add(topPanelView, BorderLayout.PAGE_START);
         add(navMenuView, BorderLayout.LINE_START);
         add(layoutContainer, BorderLayout.CENTER);
 

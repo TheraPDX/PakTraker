@@ -42,7 +42,7 @@ public class NavMenuView extends JPanel
     {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        add(Box.createVerticalStrut(5));
+        add(Box.createVerticalStrut(10));
         add(quickSaleBtn);
         add(Box.createVerticalStrut(20));
         add(homeBtn);

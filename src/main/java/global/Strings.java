@@ -8,7 +8,7 @@ public class Strings
 {
     //Cur User
     public static String CUR_USER;
-    public static String CUR_USER_TYPE = "A";
+    public static String CUR_USER_TYPE;
 
     //User Types
     public static final String ADMIN = "Admin";

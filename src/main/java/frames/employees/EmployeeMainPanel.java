@@ -6,7 +6,7 @@ package frames.employees;
 
 import frames.common.views.navMenu.NavMenuView;
 import frames.common.panels.SalePanel;
-import frames.common.panels.TopPanel;
+import frames.common.views.top.TopPanelView;
 import frames.employees.children.EmployeeCenterPanel;
 
 import javax.swing.*;
@@ -20,7 +20,7 @@ public class EmployeeMainPanel extends JPanel
 
     private final EmployeeCenterPanel employeeCenterPanel = new EmployeeCenterPanel();
 
-    private final TopPanel topPanel = new TopPanel("Employee");
+    private final TopPanelView topPanelView = new TopPanelView("Employee");
 
     private final SalePanel salePanel = new SalePanel();
     private final NavMenuView navMenuView = new NavMenuView(this, salePanel);
@@ -69,7 +69,7 @@ public class EmployeeMainPanel extends JPanel
 
         //This
         setLayout(new BorderLayout(0, 0));
-        add(topPanel, BorderLayout.PAGE_START);
+        add(topPanelView, BorderLayout.PAGE_START);
         add(navMenuView, BorderLayout.LINE_START);
         add(containerPanel, BorderLayout.CENTER);
     }
