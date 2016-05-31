@@ -7,7 +7,7 @@ package frames;
 import frames.admins.views.main.AdminView;
 import frames.common.views.container.ViewContainer;
 import frames.common.views.login.LoginView;
-import frames.employees.EmployeeMainPanel;
+import frames.employees.EmployeeView;
 import frames.settings.SettingsPanel;
 import global.Strings;
 import global.Views;
@@ -19,33 +19,35 @@ public class MainFrame
 {
     public final JFrame mainFrame = new JFrame("Pak Traker");
 
-    private final LoginView adminLoginView = new LoginView();
-    private final AdminView adminView = new AdminView();
-    private final EmployeeMainPanel employeeMainPanel = new EmployeeMainPanel();
-    private final SettingsPanel settingsPanel = new SettingsPanel();
+    private final LoginView loginView;
+    private final AdminView adminView;
+    private final SettingsPanel settingsPanel;
+    private final EmployeeView employeeView;
 
     public static final CardLayout cardLayout = new CardLayout(0, 0);
     public static ViewContainer viewContainer = new ViewContainer(cardLayout);
 
     public MainFrame()
     {
+        loginView = new LoginView();
+        adminView = new AdminView();
+        settingsPanel = new SettingsPanel();
+        employeeView = new EmployeeView();
+
         initComponents();
         addComponents();
 
-        //Main Frame
-        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainFrame.setLocationRelativeTo(null);
-        mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-        switchView(Views.LOGIN);
-
+        cardLayout.show(viewContainer, Views.LOGIN);
         mainFrame.pack();
         mainFrame.setVisible(true);
     }
 
     private void initComponents()
     {
-
+        //Main Frame
+        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainFrame.setLocationRelativeTo(null);
+        mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     private void addComponents()
@@ -54,13 +56,13 @@ public class MainFrame
         mainFrame.add(viewContainer);
 
         //Container Panel
-        viewContainer.add(adminLoginView, Views.LOGIN);
+        viewContainer.add(loginView, Views.LOGIN);
         viewContainer.add(adminView, Views.ADMIN);
-        viewContainer.add(employeeMainPanel, Views.EMPLOYEE);
+        viewContainer.add(employeeView, Views.EMPLOYEE);
         viewContainer.add(settingsPanel, Views.SETTINGS);
     }
 
-    public static void switchView(String name)
+    public static void switchMainView(String name)
     {
         cardLayout.show(viewContainer, name);
         Strings.CUR_USER_TYPE = name;

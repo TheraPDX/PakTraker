@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class EmployeeMainPanel extends JPanel
+public class EmployeeView extends JPanel
 {
     public static final CardLayout centerCardLayout = new CardLayout(0, 0);
     private final JPanel containerPanel = new JPanel(centerCardLayout);
@@ -25,7 +25,7 @@ public class EmployeeMainPanel extends JPanel
     private final SalePanel salePanel = new SalePanel();
     private final NavMenuView navMenuView = new NavMenuView(this, salePanel);
 
-    public EmployeeMainPanel()
+    public EmployeeView()
     {
         initComponents();
         addComponents();

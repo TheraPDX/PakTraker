@@ -8,6 +8,10 @@ import javax.swing.*;
 
 public class MainFrameController
 {
+    public MainFrameController()
+    {
+
+    }
 
     public static void main(String[] args)
     {

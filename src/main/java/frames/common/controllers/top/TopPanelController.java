@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-import static frames.MainFrame.switchView;
+import static frames.MainFrame.switchMainView;
 
 public class TopPanelController
 {
@@ -54,17 +54,17 @@ public class TopPanelController
                     case "Logout":
                         dropDownModel.removeElement(Strings.CUR_USER);
                         dropDownModel.setSelectedItem(Strings.CUR_USER);
-                        switchView(Views.LOGIN);
+                        switchMainView(Views.LOGIN);
                         break;
 
                     case "Settings":
                         dropDownModel.setSelectedItem(Strings.CUR_USER);
-                        switchView(Views.SETTINGS);
+                        switchMainView(Views.SETTINGS);
                         break;
 
                     case "My Stats":
                         dropDownModel.setSelectedItem(Strings.CUR_USER);
-                        switchView(Views.USER_STATS);
+                        switchMainView(Views.USER_STATS);
                         break;
 
                     default:

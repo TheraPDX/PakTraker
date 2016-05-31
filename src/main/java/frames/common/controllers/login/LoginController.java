@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-import static frames.MainFrame.switchView;
+import static frames.MainFrame.switchMainView;
 import static frames.common.views.top.TopPanelView.updateComboBox;
 
 public class LoginController
@@ -49,17 +49,17 @@ public class LoginController
                 {
                     Strings.CUR_USER_TYPE = "Admin";
                     updateComboBox(username);
-                    switchView(Views.ADMIN);
+                    switchMainView(Views.ADMIN);
                 }
                 else if(accountType.equals("Employee") && loginModel.validEmployeeAcct(username, password))
                 {
                     Strings.CUR_USER_TYPE = "Employee";
-                    switchView(Views.EMPLOYEE);
+                    switchMainView(Views.EMPLOYEE);
                 }
                 else if(accountType.equals("Customer") && loginModel.validCustomerAcct(username, password))
                 {
                     Strings.CUR_USER_TYPE = "Customer";
-                    switchView(Views.CUSTOMER);
+                    switchMainView(Views.CUSTOMER);
                 }
                 else
                 {
