@@ -4,7 +4,7 @@ package frames;
  * Created by Jonah on 4/29/2016.
  */
 
-import frames.admins.views.main.AdminMainPanel;
+import frames.admins.views.main.AdminView;
 import frames.common.views.login.LoginView;
 import frames.employees.EmployeeMainPanel;
 import frames.settings.SettingsPanel;
@@ -18,7 +18,7 @@ public class MainFrame
 {
     public final JFrame mainFrame = new JFrame("Pak Traker");
 
-    private final AdminMainPanel adminMainPanel = new AdminMainPanel();
+    private final AdminView adminView = new AdminView();
     private final EmployeeMainPanel employeeMainPanel = new EmployeeMainPanel();
     private final LoginView adminLoginView = new LoginView();
     private final SettingsPanel settingsPanel = new SettingsPanel();
@@ -53,7 +53,7 @@ public class MainFrame
         mainFrame.add(containerPanel);
 
         //Container Panel
-        containerPanel.add(adminMainPanel, Views.ADMIN);
+        containerPanel.add(adminView, Views.ADMIN);
         containerPanel.add(employeeMainPanel, Views.EMPLOYEE);
         containerPanel.add(adminLoginView, Views.LOGIN);
         containerPanel.add(settingsPanel, Views.SETTINGS);

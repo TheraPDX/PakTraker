@@ -248,7 +248,7 @@ public class SalePanel extends JPanel
         return new Dimension(250, Dimensions.screen.height);
     }
 
-    public void addHideSaleBtnAction(AbstractAction action)
+    public void addQsHideAction(AbstractAction action)
     {
         hideSalePanelBtn.addActionListener(action);
     }

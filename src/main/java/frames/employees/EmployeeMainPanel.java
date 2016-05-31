@@ -4,7 +4,7 @@ package frames.employees;
  * Created by Jonah on 5/6/2016.
  */
 
-import frames.common.panels.NavigationMenuPanel;
+import frames.common.views.navMenu.NavMenuView;
 import frames.common.panels.SalePanel;
 import frames.common.panels.TopPanel;
 import frames.employees.children.EmployeeCenterPanel;
@@ -21,8 +21,9 @@ public class EmployeeMainPanel extends JPanel
     private final EmployeeCenterPanel employeeCenterPanel = new EmployeeCenterPanel();
 
     private final TopPanel topPanel = new TopPanel("Employee");
-    private final NavigationMenuPanel navigationMenuPanel = new NavigationMenuPanel();
+
     private final SalePanel salePanel = new SalePanel();
+    private final NavMenuView navMenuView = new NavMenuView(this, salePanel);
 
     public EmployeeMainPanel()
     {
@@ -47,8 +48,6 @@ public class EmployeeMainPanel extends JPanel
             }
         };
 
-        navigationMenuPanel.addQuickSaleBtnAction(staffShowSaleAction);
-
         //Hide Sale Panel
         AbstractAction staffHideSaleAction = new AbstractAction()
         {
@@ -61,8 +60,6 @@ public class EmployeeMainPanel extends JPanel
                 repaint();
             }
         };
-
-        salePanel.addHideSaleBtnAction(staffHideSaleAction);
     }
 
     private void addComponents()
@@ -73,7 +70,7 @@ public class EmployeeMainPanel extends JPanel
         //This
         setLayout(new BorderLayout(0, 0));
         add(topPanel, BorderLayout.PAGE_START);
-        add(navigationMenuPanel, BorderLayout.LINE_START);
+        add(navMenuView, BorderLayout.LINE_START);
         add(containerPanel, BorderLayout.CENTER);
     }
 }

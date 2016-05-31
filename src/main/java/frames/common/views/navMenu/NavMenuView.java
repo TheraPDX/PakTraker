@@ -1,9 +1,10 @@
-package frames.common.panels;
+package frames.common.views.navMenu;
 
 /*
  * Created by Jonah on 5/10/2016.
  */
 
+import frames.common.controllers.navMenu.NavMenuController;
 import frames.components.buttons.MenuButton;
 import global.Colors;
 import global.Dimensions;
@@ -12,7 +13,7 @@ import global.Views;
 import javax.swing.*;
 import java.awt.*;
 
-public class NavigationMenuPanel extends JPanel
+public class NavMenuView extends JPanel
 {
     private final JButton quickSaleBtn = new JButton("Quick Sale");
 
@@ -21,16 +22,17 @@ public class NavigationMenuPanel extends JPanel
     private final MenuButton productBtn = new MenuButton("Product", Colors.menuBtnColor, Views.ADMIN_PRODUCT_INFO);
     private final MenuButton salesBtn = new MenuButton("Sales", Colors.menuBtnColor, Views.ADMIN_SALES_INFO);
 
-    public NavigationMenuPanel()
+    public NavMenuView(JPanel panel, JPanel panel1)
     {
+        NavMenuController menuController = new NavMenuController();
+        quickSaleBtn.addActionListener(menuController.getQsShowAction(panel, panel1));
+
         initComponents();
         addComponents();
     }
 
     private void initComponents()
     {
-        //This
-
         //Quick Sale Button
         quickSaleBtn.setBackground(Color.RED);
         quickSaleBtn.setAlignmentX(CENTER_ALIGNMENT);
@@ -57,10 +59,5 @@ public class NavigationMenuPanel extends JPanel
     public Dimension getPreferredSize()
     {
         return new Dimension(150, Dimensions.screen.height);
-    }
-
-    public void addQuickSaleBtnAction(AbstractAction action)
-    {
-        quickSaleBtn.addActionListener(action);
     }
 }
