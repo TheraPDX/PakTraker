@@ -18,17 +18,14 @@ package frames.admins.views.staffControl;
     - Change Employees To Admins
  */
 
-import frames.admins.controllers.staffControl.AdminStaffController;
 import frames.admins.views.staffControl.children.StaffTableView;
-import frames.interfaces.views.IMainView;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class StaffControlView extends JPanel implements IMainView
+public class StaffControlView extends JPanel
 {
     private final StaffTableView staffTableView = new StaffTableView();
-    private final AdminStaffController adminStaffController = new AdminStaffController(this);
 
     public StaffControlView()
     {

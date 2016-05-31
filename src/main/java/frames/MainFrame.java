@@ -5,6 +5,7 @@ package frames;
  */
 
 import frames.admins.views.main.AdminView;
+import frames.common.views.container.ViewContainer;
 import frames.common.views.login.LoginView;
 import frames.employees.EmployeeMainPanel;
 import frames.settings.SettingsPanel;
@@ -18,13 +19,13 @@ public class MainFrame
 {
     public final JFrame mainFrame = new JFrame("Pak Traker");
 
+    private final LoginView adminLoginView = new LoginView();
     private final AdminView adminView = new AdminView();
     private final EmployeeMainPanel employeeMainPanel = new EmployeeMainPanel();
-    private final LoginView adminLoginView = new LoginView();
     private final SettingsPanel settingsPanel = new SettingsPanel();
 
     public static final CardLayout cardLayout = new CardLayout(0, 0);
-    public static final JPanel containerPanel = new JPanel(cardLayout);
+    public static ViewContainer viewContainer = new ViewContainer(cardLayout);
 
     public MainFrame()
     {
@@ -50,18 +51,18 @@ public class MainFrame
     private void addComponents()
     {
         //Main Frame
-        mainFrame.add(containerPanel);
+        mainFrame.add(viewContainer);
 
         //Container Panel
-        containerPanel.add(adminView, Views.ADMIN);
-        containerPanel.add(employeeMainPanel, Views.EMPLOYEE);
-        containerPanel.add(adminLoginView, Views.LOGIN);
-        containerPanel.add(settingsPanel, Views.SETTINGS);
+        viewContainer.add(adminLoginView, Views.LOGIN);
+        viewContainer.add(adminView, Views.ADMIN);
+        viewContainer.add(employeeMainPanel, Views.EMPLOYEE);
+        viewContainer.add(settingsPanel, Views.SETTINGS);
     }
 
     public static void switchView(String name)
     {
-        cardLayout.show(containerPanel, name);
+        cardLayout.show(viewContainer, name);
         Strings.CUR_USER_TYPE = name;
     }
 }

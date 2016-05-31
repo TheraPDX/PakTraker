@@ -5,12 +5,11 @@ package frames.common.views.login;
  */
 
 import frames.common.controllers.login.LoginController;
-import frames.interfaces.views.IMainView;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginView extends JPanel implements IMainView
+public class LoginView extends JPanel
 {
     private final JLabel usernameLbl = new JLabel("Username", SwingConstants.CENTER);
     private final JLabel passwordLbl = new JLabel("Password", SwingConstants.CENTER);

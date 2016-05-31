@@ -4,12 +4,10 @@ package frames.admins.controllers.staffControl;
  * Created by Jonah on 5/29/2016.
  */
 
-import frames.interfaces.controllers.IMainController;
-
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminStaffController implements IMainController
+public class AdminStaffController
 {
     JPanel panel = new JPanel();
     CardLayout cardLayout = new CardLayout();
@@ -25,7 +23,6 @@ public class AdminStaffController implements IMainController
         this.panel = panel;
     }
 
-    @Override
     public void switchView(String view)
     {
         cardLayout.show(panel, view);
