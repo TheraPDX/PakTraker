@@ -9,7 +9,7 @@ import javax.swing.*;
 public class ActionPanelButtons
 {
 
-    public static JButton[] staffControlBtns()
+    public static JButton[] getStaffControlBtns()
     {
         ActionButton hireBtn = new ActionButton("Hire");
         ActionButton fireBtn = new ActionButton("Fire");
