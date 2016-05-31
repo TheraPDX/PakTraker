@@ -4,6 +4,7 @@ package frames.common.controllers.top;
  * Created by Jonah on 5/31/2016.
  */
 
+import frames.common.models.top.TopPanelModel;
 import global.Strings;
 import global.Views;
 
@@ -11,9 +12,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import static frames.MainFrame.switchView;
 
@@ -24,21 +22,21 @@ public class TopPanelController
 
     }
 
-    public AbstractAction getTimeUpdaterAction(JLabel timeDateLabel)
+    public AbstractAction getTimeUpdaterAction(JLabel timeDateLabel, TopPanelModel topModel)
     {
         return new AbstractAction()
         {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                DateFormat date = new SimpleDateFormat("M/dd/yy");
+                /*DateFormat date = new SimpleDateFormat("M/dd/yy");
                 DateFormat time = new SimpleDateFormat("h:mm");
                 Calendar calendar = Calendar.getInstance();
 
                 String curTimeAndDate = "<html><div style='text-align: center;'>" + time.format(calendar.getTime())
-                        + "<br>" + date.format(calendar.getTime()) + "</div></html>";
+                        + "<br>" + date.format(calendar.getTime()) + "</div></html>";*/
 
-                SwingUtilities.invokeLater(() -> timeDateLabel.setText(curTimeAndDate));
+                SwingUtilities.invokeLater(() -> timeDateLabel.setText(topModel.getFormattedTimeAndDate()));
             }
         };
     }

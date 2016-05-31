@@ -16,10 +16,10 @@ public class TopPanelModel
 
     DateFormat date = new SimpleDateFormat("M/dd/yy");
     DateFormat time = new SimpleDateFormat("h:mm");
-    Calendar calendar = Calendar.getInstance();
+    Calendar calendar;
 
-    String TIME = time.format(calendar.getTime());
-    String DATE = date.format(calendar.getTime());
+    //String TIME = time.format(calendar.getTime());
+    //String DATE = date.format(calendar.getTime());
 
     public TopPanelModel()
     {
@@ -33,12 +33,14 @@ public class TopPanelModel
 
     public String getTime()
     {
-        return TIME;
+        calendar = Calendar.getInstance();
+        return time.format(calendar.getTime());
     }
 
     public String getDate()
     {
-        return DATE;
+        calendar = Calendar.getInstance();
+        return date.format(calendar.getTime());
     }
 
     public String getFormattedTimeAndDate()

@@ -46,7 +46,7 @@ public class TopPanelView extends JPanel
         //Time And Date
         timeAndDate.setMaximumSize(new Dimension(40, 35));
 
-        Timer timeUpdater = new Timer(15000, topController.getTimeUpdaterAction(timeAndDate));
+        Timer timeUpdater = new Timer(15000, topController.getTimeUpdaterAction(timeAndDate, topModel));
         timeUpdater.start();
         timeUpdater.setRepeats(true);
 
