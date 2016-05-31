@@ -1,10 +1,8 @@
 package frames.common.views.container;
 
 /*
- * Created by Jonah on 5/30/2016.
- */
+    Created by Jonah on 5/30/2016.
 
-/*
     JPanel With The Sole Purpose Of
     Being Used As The Container For
     All Of My (Possibly Too Many ;P)
