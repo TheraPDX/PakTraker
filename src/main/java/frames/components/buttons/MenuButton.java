@@ -4,38 +4,29 @@ package frames.components.buttons;
  * Created by Jonah on 5/28/2016.
  */
 
+import global.Colors;
+
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.admins.controllers.main.AdminController.switchAdminView;
-import static frames.admins.views.main.AdminView.addToolbar;
-import static frames.admins.views.main.AdminView.removeToolbar;
+import static frames.admins.views.main.AdminView.showToolbar;
+import static frames.admins.views.main.AdminView.switchAdminView;
 
 public class MenuButton extends JButton
 {
-    public MenuButton(String title, Color color, String view, boolean showToolbar)
+    public MenuButton(String title, String view, boolean toolBarVisible)
     {
         super(title);
 
         setAlignmentX(CENTER_ALIGNMENT);
-        setBackground(color);
+        setBackground(Colors.menuBtnColor);
         setMinimumSize(new Dimension(110, 25));
         setMaximumSize(new Dimension(110, 25));
 
-        System.out.println("Menu Button View: " + view);
-
         addActionListener(e ->
         {
-            if(showToolbar)
-            {
-                addToolbar(title);
-                switchAdminView(view);
-            }
-            else
-            {
-                removeToolbar();
-                switchAdminView(view);
-            }
+            showToolbar(toolBarVisible, title);
+            switchAdminView(view);
         });
     }
 }

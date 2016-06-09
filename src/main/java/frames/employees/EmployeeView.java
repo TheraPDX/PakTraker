@@ -23,7 +23,7 @@ public class EmployeeView extends JPanel
     private final TopPanelView topPanelView = new TopPanelView("Employee");
 
     private final SalePanel salePanel = new SalePanel();
-    private final NavMenuView navMenuView = new NavMenuView(this, salePanel);
+    private final NavMenuView navMenuView = new NavMenuView();
 
     public EmployeeView()
     {

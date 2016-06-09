@@ -10,6 +10,8 @@ import utils.DateUtils;
 import javax.swing.*;
 import java.awt.*;
 
+import static frames.admins.views.main.AdminView.showQuickSale;
+
 public class SalePanel extends JPanel
 {
     private final JLabel typeOfProductLbl = new JLabel("Type Of Product");
@@ -31,7 +33,7 @@ public class SalePanel extends JPanel
 
     private final JButton makeSaleBtn = new JButton("Make Sale");
     private final JButton resetSaleInfoBtn = new JButton("Reset Sale Info");
-    private final JButton hideSalePanelBtn = new JButton("Hide Sale Bar");
+    private final JButton hideQSBtn = new JButton("Hide Sale Bar");
 
     private final DateUtils dateUtils = new DateUtils();
 
@@ -149,6 +151,8 @@ public class SalePanel extends JPanel
             salePriceTf.setText("Price");
             dobTf.setText("D.O.B.");
         });
+
+        hideQSBtn.addActionListener(e -> showQuickSale(false));
     }
 
     private void addComponents()
@@ -238,7 +242,7 @@ public class SalePanel extends JPanel
         gbc.gridx = x;
         gbc.gridy = y + 10;
         gbc.weighty = 1.0;
-        add(hideSalePanelBtn, gbc);
+        add(hideQSBtn, gbc);
     }
 
     //Keep For Layout Sizing Purposes
@@ -246,10 +250,5 @@ public class SalePanel extends JPanel
     public Dimension getPreferredSize()
     {
         return new Dimension(250, Dimensions.screen.height);
-    }
-
-    public void addQsHideAction(AbstractAction action)
-    {
-        hideSalePanelBtn.addActionListener(action);
     }
 }
