@@ -27,7 +27,7 @@ public class AdminView extends JPanel
     private final AdminCenterView adminCenterView;
     private final StaffControlView staffControlView;
 
-    private final ToolBarView toolBarView;
+    private static ToolBarView toolBarView;
     private final SalePanel salePanel;
     private final TopPanelView topPanel;
     private final NavMenuView navMenuView;
@@ -62,8 +62,7 @@ public class AdminView extends JPanel
         salePanel.addQsHideAction(adminController.getQsHideAction(this, salePanel));
 
         //Action Panel
-        toolBarView.setVisible(true);
-        toolBarView.getButton(0).addActionListener(e -> toolBarView.setCurBtns(new JButton[]{new JButton("Test")}));
+        toolBarView.setVisible(false);
     }
 
     private void addComponents()
@@ -74,8 +73,8 @@ public class AdminView extends JPanel
         layoutContainer.add(viewContainer, BorderLayout.CENTER);
 
         //View Container
-        viewContainer.add(adminCenterView, Views.ADMIN_MAIN);
-        viewContainer.add(staffControlView, Views.ADMIN_EMPLOYEE_CONTROLLER);
+        viewContainer.add(adminCenterView, Views.A_MAIN);
+        viewContainer.add(staffControlView, Views.A_EMPLOYEE_CNTRLR);
 
         //This
         setLayout(new BorderLayout(0, 0));
@@ -84,6 +83,17 @@ public class AdminView extends JPanel
         add(layoutContainer, BorderLayout.CENTER);
 
         //Select Visible View
-        cardLayout.show(viewContainer, Views.ADMIN_MAIN);
+        cardLayout.show(viewContainer, Views.A_MAIN);
+    }
+
+    public static void addToolbar(String toolBarSet)
+    {
+        toolBarView.updateButtons(toolBarView.getModel().getButtonSet(toolBarSet));
+        toolBarView.setVisible(true);
+    }
+
+    public static void removeToolbar()
+    {
+        toolBarView.setVisible(false);
     }
 }

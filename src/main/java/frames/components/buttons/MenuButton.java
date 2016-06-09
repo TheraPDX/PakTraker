@@ -8,16 +8,14 @@ import javax.swing.*;
 import java.awt.*;
 
 import static frames.admins.controllers.main.AdminController.switchAdminView;
+import static frames.admins.views.main.AdminView.addToolbar;
+import static frames.admins.views.main.AdminView.removeToolbar;
 
 public class MenuButton extends JButton
 {
-    String view;
-
-    public MenuButton(String title, Color color, String view)
+    public MenuButton(String title, Color color, String view, boolean showToolbar)
     {
         super(title);
-
-        this.view = view;
 
         setAlignmentX(CENTER_ALIGNMENT);
         setBackground(color);
@@ -26,6 +24,18 @@ public class MenuButton extends JButton
 
         System.out.println("Menu Button View: " + view);
 
-        addActionListener(e -> switchAdminView(view));
+        addActionListener(e ->
+        {
+            if(showToolbar)
+            {
+                addToolbar(title);
+                switchAdminView(view);
+            }
+            else
+            {
+                removeToolbar();
+                switchAdminView(view);
+            }
+        });
     }
 }

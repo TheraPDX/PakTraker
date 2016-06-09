@@ -5,6 +5,7 @@ package frames.common.views.toolbar;
  */
 
 import frames.common.controllers.toolbar.ToolBarController;
+import frames.common.models.toolbar.ToolBarModel;
 import global.Dimensions;
 
 import javax.swing.*;
@@ -12,17 +13,15 @@ import java.awt.*;
 
 public class ToolBarView extends JPanel
 {
-
     ToolBarController toolBarController;
-    JButton[] buttons;
+    ToolBarModel toolBarModel;
 
     public ToolBarView()
     {
         toolBarController = new ToolBarController();
-        this.buttons = toolBarController.getStaffControlBtns();
+        toolBarModel = new ToolBarModel();
 
         initComponents();
-        addComponents(buttons);
     }
 
     private void initComponents()
@@ -30,7 +29,7 @@ public class ToolBarView extends JPanel
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
     }
 
-    private void addComponents(JButton[] buttons)
+    public void updateButtons(JButton[] buttons)
     {
         removeAll();
         add(Box.createHorizontalGlue());
@@ -47,25 +46,19 @@ public class ToolBarView extends JPanel
         repaint();
     }
 
-    public void setCurBtns(JButton[] buttons)
-    {
-        this.buttons = buttons;
-        addComponents(buttons);
-    }
-
-    public JButton[] getCurBtns()
-    {
-        return this.buttons;
-    }
-
-    public JButton getButton(int index)
-    {
-        return buttons[index];
-    }
-
     @Override
     public Dimension getPreferredSize()
     {
         return new Dimension(Dimensions.screen.width, 45);
+    }
+
+    public ToolBarController getController()
+    {
+        return toolBarController;
+    }
+
+    public ToolBarModel getModel()
+    {
+        return toolBarModel;
     }
 }

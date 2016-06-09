@@ -9,7 +9,6 @@ import java.awt.*;
 
 public class ActionButton extends JButton
 {
-
     public ActionButton(String text)
     {
         super(text);

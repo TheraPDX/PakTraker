@@ -15,8 +15,8 @@ public class Views
     public static final String USER_STATS = "Stats";
 
     //Admin Views
-    public static final String ADMIN_MAIN = "Admin Main";
-    public static final String ADMIN_PRODUCT_INFO = "Product Info";
-    public static final String ADMIN_SALES_INFO = "Sales Info";
-    public static final String ADMIN_EMPLOYEE_CONTROLLER = "Employee Controller";
+    public static final String A_MAIN = "Admin Main";
+    public static final String A_PRODUCT_INFO = "Product Info";
+    public static final String A_SALES_INFO = "Sales Info";
+    public static final String A_EMPLOYEE_CNTRLR = "Employee Controller";
 }

@@ -25,11 +25,11 @@ public class AdminController
     {
         switch(view)
         {
-            case Views.ADMIN_MAIN:
+            case Views.A_MAIN:
                 //actionPanel.setVisible(false);
                 cardLayout.show(container, view);
                 break;
-            case Views.ADMIN_EMPLOYEE_CONTROLLER:
+            case Views.A_EMPLOYEE_CNTRLR:
                 //actionPanel.setCurBtns(staffControlBtns());
                 //actionPanel.setVisible(true);
                 cardLayout.show(container, view);

@@ -17,10 +17,10 @@ public class NavMenuView extends JPanel
 {
     private final JButton quickSaleBtn = new JButton("Quick Sale");
 
-    private final MenuButton homeBtn = new MenuButton("Home", Colors.menuBtnColor, Views.ADMIN_MAIN);
-    private final MenuButton employeeInfoBtn = new MenuButton("Employees", Colors.menuBtnColor, Views.ADMIN_EMPLOYEE_CONTROLLER);
-    private final MenuButton productBtn = new MenuButton("Product", Colors.menuBtnColor, Views.ADMIN_PRODUCT_INFO);
-    private final MenuButton salesBtn = new MenuButton("Sales", Colors.menuBtnColor, Views.ADMIN_SALES_INFO);
+    private final MenuButton homeBtn = new MenuButton("Home", Colors.menuBtnColor, Views.A_MAIN, false);
+    private final MenuButton employeeInfoBtn = new MenuButton("Employees", Colors.menuBtnColor, Views.A_EMPLOYEE_CNTRLR, true);
+    private final MenuButton productBtn = new MenuButton("Product", Colors.menuBtnColor, Views.A_PRODUCT_INFO, true);
+    private final MenuButton salesBtn = new MenuButton("Sales", Colors.menuBtnColor, Views.A_SALES_INFO, true);
 
     public NavMenuView(JPanel panel, JPanel panel1)
     {
