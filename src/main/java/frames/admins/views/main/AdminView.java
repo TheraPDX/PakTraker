@@ -4,7 +4,7 @@ package frames.admins.views.main;
  * Created by Jonah on 4/30/2016.
  */
 
-import frames.admins.views.center.AdminCenterView;
+import frames.admins.views.home.AdminHomeView;
 import frames.admins.views.staffControl.StaffControlView;
 import frames.common.panels.SalePanel;
 import frames.common.views.container.ViewContainer;
@@ -23,7 +23,7 @@ public class AdminView extends JPanel
     public static CardLayout cardLayout;
     private static ViewContainer viewContainer;
 
-    private final AdminCenterView adminCenterView;
+    private final AdminHomeView adminHomeView;
     private final StaffControlView staffControlView;
 
     private static ToolBarView toolBarView;
@@ -42,7 +42,7 @@ public class AdminView extends JPanel
         navMenuView = new NavMenuView();
         toolBarView = new ToolBarView();
 
-        adminCenterView = new AdminCenterView();
+        adminHomeView = new AdminHomeView();
         staffControlView = new StaffControlView();
 
         initComponents();
@@ -69,7 +69,7 @@ public class AdminView extends JPanel
         layoutContainer.add(viewContainer, BorderLayout.CENTER);
 
         //View Container
-        viewContainer.add(adminCenterView, Views.A_MAIN);
+        viewContainer.add(adminHomeView, Views.A_MAIN);
         viewContainer.add(staffControlView, Views.A_EMPLOYEE_CNTRLR);
 
         //This

@@ -2,20 +2,17 @@ package frames.admins.views.staffControl;
 
 /*
  * Created by Jonah on 5/7/2016.
- */
-
-/*
-    - Hire Employee
-    - Fire Employee
-    - List Of Employees
-    - Individual Employee Detail
-        - Social
-        - DOB
-        - Years W. Company
-        - Total Sales, All time, Weekly, Daily
-        - Total Hours
-    - Pay Rate, Raises
-    - Change Employees To Admins
+ *  - Hire Employee
+ *  - Fire Employee
+ *  - List Of Employees
+ *  - Individual Employee Detail
+ *      - Social
+ *      - DOB
+ *      - Years W. Company
+ *      - Total Sales, All time, Weekly, Daily
+ *      - Total Hours
+ *  - Pay Rate, Raises
+ *  - Change Employees To Admins
  */
 
 import frames.admins.views.staffControl.children.StaffTableView;

@@ -52,11 +52,6 @@ public class ToolBarView extends JPanel
         return new Dimension(Dimensions.screen.width, 45);
     }
 
-    public ToolBarController getController()
-    {
-        return toolBarController;
-    }
-
     public ToolBarModel getModel()
     {
         return toolBarModel;

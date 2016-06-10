@@ -10,6 +10,8 @@ import global.Dimensions;
 import global.Strings;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicArrowButton;
+import javax.swing.plaf.basic.BasicComboBoxUI;
 import java.awt.*;
 
 public class TopPanelView extends JPanel
@@ -20,7 +22,7 @@ public class TopPanelView extends JPanel
     private final JLabel timeAndDate;
     private final JLabel logo;
 
-    private static JComboBox<String> userDropdown;
+    public static JComboBox<String> userDropdown;
 
     public TopPanelView(String curView)
     {
@@ -53,6 +55,14 @@ public class TopPanelView extends JPanel
         //User Dropdown
         userDropdown.setMaximumSize(new Dimension(100, 35));
         userDropdown.addItemListener(topController.getUddItemListener(topModel.getDropDownModel()));
+
+        userDropdown.setUI(new BasicComboBoxUI()
+        {
+            @Override
+            protected JButton createArrowButton() {
+                return new BasicArrowButton(BasicArrowButton.NORTH);
+            }
+        });
     }
 
     private void addComponents()

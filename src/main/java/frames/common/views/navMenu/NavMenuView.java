@@ -4,6 +4,7 @@ package frames.common.views.navMenu;
  * Created by Jonah on 5/10/2016.
  */
 
+import frames.common.views.top.TopPanelView;
 import frames.components.buttons.MenuButton;
 import global.Dimensions;
 import global.Views;
@@ -51,6 +52,8 @@ public class NavMenuView extends JPanel
         add(Box.createVerticalStrut(10));
         add(salesBtn);
         add(Box.createVerticalStrut(10));
+        add(Box.createVerticalGlue());
+        add(TopPanelView.userDropdown);
     }
 
     @Override
