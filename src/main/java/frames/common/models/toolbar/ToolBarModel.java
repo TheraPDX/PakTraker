@@ -5,17 +5,20 @@ package frames.common.models.toolbar;
  */
 
 import frames.components.buttons.ActionButton;
+import global.Strings;
 
 import javax.swing.*;
 
 public class ToolBarModel
 {
-    public ToolBarModel()
-    {
+    String userType;
 
+    public ToolBarModel(String userType)
+    {
+        this.userType = userType;
     }
 
-    private JButton[] getStaffControlBtns()
+    private JButton[] getAdminStaffControlBtns()
     {
         ActionButton hireBtn = new ActionButton("Hire");
         ActionButton fireBtn = new ActionButton("Fire");
@@ -26,7 +29,7 @@ public class ToolBarModel
         };
     }
 
-    private JButton[] getProductControlBtns()
+    private JButton[] getAdminProductControlBtns()
     {
         ActionButton reupBtn = new ActionButton("Re-Up");
 
@@ -35,7 +38,7 @@ public class ToolBarModel
         };
     }
 
-    private JButton[] getSalesBtns()
+    private JButton[] getAdminSalesBtns()
     {
         ActionButton totalSalesBtn = new ActionButton("Total Sales");
 
@@ -44,16 +47,41 @@ public class ToolBarModel
         };
     }
 
+    public JButton[] getEmployViewBtns()
+    {
+        ActionButton someBtn = new ActionButton("Something");
+
+        return new JButton[]{
+                someBtn
+        };
+    }
+
     public JButton[] getButtonSet(String buttonSet)
     {
-        switch(buttonSet)
+        switch(userType)
         {
-            case "Employees":
-                return getStaffControlBtns();
-            case "Product":
-                return getProductControlBtns();
-            case "Sales":
-                return getSalesBtns();
+            case Strings.ADMIN:
+                switch(buttonSet)
+                {
+                    case "Employees":
+                        return getAdminStaffControlBtns();
+                    case "Product":
+                        return getAdminProductControlBtns();
+                    case "Sales":
+                        return getAdminSalesBtns();
+                    default:
+                        return null;
+                }
+
+            case Strings.EMPLOYEE:
+                switch(buttonSet)
+                {
+                    case "Employee View":
+                        return getEmployViewBtns();
+                    default:
+                        return null;
+                }
+
             default:
                 return null;
         }
