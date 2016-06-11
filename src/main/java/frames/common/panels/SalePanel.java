@@ -10,7 +10,7 @@ import utils.DateUtils;
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.admins.views.main.AdminView.showQuickSale;
+import static frames.admins.views.main.AdminView.showAdminQuickSale;
 
 public class SalePanel extends JPanel
 {
@@ -152,7 +152,7 @@ public class SalePanel extends JPanel
             dobTf.setText("D.O.B.");
         });
 
-        hideQSBtn.addActionListener(e -> showQuickSale(false));
+        hideQSBtn.addActionListener(e -> showAdminQuickSale(false));
     }
 
     private void addComponents()

@@ -16,7 +16,7 @@ public class ToolBarView extends JPanel
     ToolBarController toolBarController;
     ToolBarModel toolBarModel;
 
-    public ToolBarView()
+    public ToolBarView(String userType)
     {
         toolBarController = new ToolBarController();
         toolBarModel = new ToolBarModel();

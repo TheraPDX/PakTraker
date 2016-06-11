@@ -8,6 +8,7 @@ import frames.common.views.navMenu.NavMenuView;
 import frames.common.panels.SalePanel;
 import frames.common.views.top.TopPanelView;
 import frames.employees.children.EmployeeCenterPanel;
+import global.Strings;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,7 @@ public class EmployeeView extends JPanel
     private final TopPanelView topPanelView = new TopPanelView("Employee");
 
     private final SalePanel salePanel = new SalePanel();
-    private final NavMenuView navMenuView = new NavMenuView();
+    private final NavMenuView navMenuView = new NavMenuView(Strings.EMPLOYEE);
 
     public EmployeeView()
     {

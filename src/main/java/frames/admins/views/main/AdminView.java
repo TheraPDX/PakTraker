@@ -11,6 +11,7 @@ import frames.common.views.container.ViewContainer;
 import frames.common.views.navMenu.NavMenuView;
 import frames.common.views.toolbar.ToolBarView;
 import frames.common.views.top.TopPanelView;
+import global.Strings;
 import global.Views;
 
 import javax.swing.*;
@@ -37,11 +38,11 @@ public class AdminView extends JPanel
         cardLayout = new CardLayout(0, 0);
         viewContainer = new ViewContainer(cardLayout);
 
-        topPanel = new TopPanelView("Admin");
-        salePanel = new SalePanel();
-        navMenuView = new NavMenuView();
-        toolBarView = new ToolBarView();
+        topPanel = new TopPanelView(Strings.ADMIN);
+        navMenuView = new NavMenuView(Strings.ADMIN);
+        toolBarView = new ToolBarView(Strings.ADMIN);
 
+        salePanel = new SalePanel();
         adminHomeView = new AdminHomeView();
         staffControlView = new StaffControlView();
 
@@ -88,12 +89,12 @@ public class AdminView extends JPanel
         cardLayout.show(viewContainer, view);
     }
 
-    public static void showQuickSale(boolean show)
+    public static void showAdminQuickSale(boolean show)
     {
         salePanel.setVisible(show);
     }
 
-    public static void showToolbar(boolean show, String toolBarSet)
+    public static void showAdminToolbar(boolean show, String toolBarSet)
     {
         if(show)
         {

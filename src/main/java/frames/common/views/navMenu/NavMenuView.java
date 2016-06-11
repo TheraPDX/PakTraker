@@ -7,12 +7,13 @@ package frames.common.views.navMenu;
 import frames.common.views.top.TopPanelView;
 import frames.components.buttons.MenuButton;
 import global.Dimensions;
+import global.Strings;
 import global.Views;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.admins.views.main.AdminView.showQuickSale;
+import static frames.admins.views.main.AdminView.showAdminQuickSale;
 
 public class NavMenuView extends JPanel
 {
@@ -23,23 +24,52 @@ public class NavMenuView extends JPanel
     private final MenuButton productBtn = new MenuButton("Product", Views.A_PRODUCT_INFO, true);
     private final MenuButton salesBtn = new MenuButton("Sales", Views.A_SALES_INFO, true);
 
-    public NavMenuView()
+    public NavMenuView(String userType)
     {
         initComponents();
-        addComponents();
+
+        if(userType.equals(Strings.ADMIN))
+        {
+            adminComponents();
+        }
+        else if(userType.equals(Strings.EMPLOYEE))
+        {
+            employeeComponents();
+        }
     }
 
     private void initComponents()
     {
+        //This
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
         //Quick Sale Button
         quickSaleBtn.setBackground(Color.RED);
         quickSaleBtn.setAlignmentX(CENTER_ALIGNMENT);
-        quickSaleBtn.addActionListener(e -> showQuickSale(true));
     }
 
-    private void addComponents()
+    private void adminComponents()
     {
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        quickSaleBtn.addActionListener(e -> showAdminQuickSale(true));
+
+        add(Box.createVerticalStrut(10));
+        add(quickSaleBtn);
+        add(Box.createVerticalStrut(20));
+        add(homeBtn);
+        add(Box.createVerticalStrut(10));
+        add(employeeInfoBtn);
+        add(Box.createVerticalStrut(10));
+        add(productBtn);
+        add(Box.createVerticalStrut(10));
+        add(salesBtn);
+        add(Box.createVerticalStrut(10));
+        add(Box.createVerticalGlue());
+        add(TopPanelView.userDropdown);
+    }
+
+    private void employeeComponents()
+    {
+        //quickSaleBtn.addActionListener(e -> showEmployQuickSale(true));
 
         add(Box.createVerticalStrut(10));
         add(quickSaleBtn);

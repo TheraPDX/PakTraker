@@ -9,7 +9,7 @@ import global.Colors;
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.admins.views.main.AdminView.showToolbar;
+import static frames.admins.views.main.AdminView.showAdminToolbar;
 import static frames.admins.views.main.AdminView.switchAdminView;
 
 public class MenuButton extends JButton
@@ -25,7 +25,7 @@ public class MenuButton extends JButton
 
         addActionListener(e ->
         {
-            showToolbar(toolBarVisible, title);
+            showAdminToolbar(toolBarVisible, title);
             switchAdminView(view);
         });
     }
