@@ -4,11 +4,11 @@ package frames;
  * Created by Jonah on 4/29/2016.
  */
 
-import frames.admins.views.main.AdminView;
-import frames.common.views.container.ViewContainer;
-import frames.common.views.login.LoginView;
+import frames.admins.views.AdminView;
+import frames.common.views.ViewContainer;
+import frames.common.views.LoginView;
 import frames.employees.EmployeeView;
-import frames.settings.SettingsPanel;
+import frames.common.views.SettingsPanel;
 import global.Strings;
 import global.Views;
 

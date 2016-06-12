@@ -5,12 +5,12 @@ package frames.common.panels;
  */
 
 import global.Dimensions;
-import utils.DateUtils;
+import global.DateUtils;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.admins.views.main.AdminView.showAdminQuickSale;
+import static frames.admins.views.AdminView.showAdminQuickSale;
 
 public class SalePanel extends JPanel
 {

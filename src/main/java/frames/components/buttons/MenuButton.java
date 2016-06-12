@@ -9,8 +9,8 @@ import global.Colors;
 import javax.swing.*;
 import java.awt.*;
 
-import static frames.admins.views.main.AdminView.showAdminToolbar;
-import static frames.admins.views.main.AdminView.switchAdminView;
+import static frames.admins.views.AdminView.showAdminToolbar;
+import static frames.admins.views.AdminView.switchAdminView;
 
 public class MenuButton extends JButton
 {

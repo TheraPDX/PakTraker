@@ -4,9 +4,9 @@ package frames.employees;
  * Created by Jonah on 5/6/2016.
  */
 
-import frames.common.views.navMenu.NavMenuView;
+import frames.common.views.NavMenuView;
 import frames.common.panels.SalePanel;
-import frames.common.views.top.TopPanelView;
+import frames.common.views.TopPanelView;
 import frames.employees.children.EmployeeCenterPanel;
 import global.Strings;
 
